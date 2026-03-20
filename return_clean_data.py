@@ -21,4 +21,4 @@ def process_patient_file(path):
     #return valid.to_dict("records"), invalid.to_dict("records")
 
 #test code
-process_patient_file("/Users/christopherezeogu/Documents/Dev/Repo/Hello-World/raw_data.csv")    
+process_patient_file("raw_data.csv")
