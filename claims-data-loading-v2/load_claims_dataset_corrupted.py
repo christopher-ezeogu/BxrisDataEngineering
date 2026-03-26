@@ -1,14 +1,10 @@
 """
-Use them for two different tests:
-1. claims_harder_dataset.csv
+Test Data:
+- claims_harder_dataset_corrupted.csv
     tests validation logic, schema normalization, type coercion, dedupe, and business-rule rejection
-2. claims_harder_dataset_corrupted.csv
     tests whether your ingestion can survive malformed raw files without crashing the whole pipeline
 
-The second file is the one that exposes weak parsers fast. A basic pd.read_csv() will likely fail on it unless you deliberately handle bad lines.
-
-
-Requirements (clean out the following bac data)
+Requirements (clean out the following bad data)
     - missing required fields
     - duplicate claim_id
     - negative claim_amount
@@ -41,16 +37,6 @@ These are quarantined after parsing:
     - malformed service_date
     - future service_date    
 
-clean_df, business_bad_df, structural_bad_df = load_claims_v3("claims_harder_dataset_corrupted.csv")
-
-print("\nCLEAN RECORDS")
-print(clean_df.head())
-
-print("\nBUSINESS BAD RECORDS")
-print(business_bad_df.head())
-
-print("\nSTRUCTURAL BAD ROWS")
-print(structural_bad_df.head())
 
 """
 import csv
@@ -78,7 +64,7 @@ expected_fields = [
 
 valid_cpt_codes = {99213, 80050, 93000, 71020, 99214, 36415}
 
-def load_claims_v3(file_name):
+def load_claims_v2(file_name):
    try:
         bad_rows = []
         clean_rows = []
@@ -263,9 +249,6 @@ def load_claims_v3(file_name):
             "procedure_code": "Int64",
             "diagnosis_code": "string"
         })
-        # safe integer conversion
-        # df["patient_id"] = df["patient_id"].astype("Int64")
-        # return clean_df, business_bad_df, pd.DataFrame(bad_rows)
 
         #-----------------------------------------------------
         # 8. load records to database and archive bad records
@@ -275,11 +258,18 @@ def load_claims_v3(file_name):
         file_name = '/invalid_records_'+processedDt+'.csv'
         temp_file_name = '/invalid_records_'+processedDt+'.tmp'
 
+        structural_bad_records_file_name = '/structural_bad_records_'+processedDt+'.csv'
+        temp_structural_bad_records_file_name = '/structural_bad_records_'+processedDt+'.tmp'
+
         final_file_path = os.getcwd() + file_name
         temp_file_path = os.getcwd() + temp_file_name
 
+        final_structural_bad_record_file_path = os.getcwd() + structural_bad_records_file_name
+        temp_structural_bad_record_file_path = os.getcwd() + temp_structural_bad_records_file_name
+
         # save dataframe to temp file location.
         business_bad_df.to_csv(temp_file_path, index=False)
+        pd.DataFrame(bad_rows).to_csv(temp_structural_bad_record_file_path, index=False)
 
         # validate temp archive
         temp_invalid_count = len(pd.read_csv(temp_file_path))
@@ -304,6 +294,7 @@ def load_claims_v3(file_name):
 
         # promote temp archive to final archive only after DB load succeeds
         os.replace(temp_file_path, final_file_path)
+        os.replace(temp_structural_bad_record_file_path, final_structural_bad_record_file_path)
 
         archived_invalid_count = len(pd.read_csv(final_file_path))
         if archived_invalid_count != len(business_bad_df):
@@ -317,6 +308,7 @@ def load_claims_v3(file_name):
         print(f"{copied_count} valid records loaded successfully")
         print(f"{archived_invalid_count} invalid records archived successfully")
         print("DB load and archive completed together")
+        
    except (Exception, psycopg2.DatabaseError) as error:
         print(f"Error: {error}")
 
@@ -329,7 +321,7 @@ def load_claims_v3(file_name):
                 print(f"Rollback failed: {rollback_error}")
 
         # cleanup archive files best-effort
-        for path in [temp_file_path, final_file_path]:
+        for path in [temp_file_path, final_file_path, temp_structural_bad_record_file_path, final_structural_bad_record_file_path]:
             if path and os.path.exists(path):
                 try:
                     os.remove(path)
@@ -351,6 +343,5 @@ def load_claims_v3(file_name):
 
 
 # test
-load_claims_v3("claims_harder_dataset_corrupted.csv")
-
+load_claims_v2("claims_harder_dataset_corrupted.csv")
 
