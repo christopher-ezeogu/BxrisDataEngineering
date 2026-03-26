@@ -20,11 +20,11 @@ processedDt = dt.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
 
 REQUIRED_FIELDS = ["claim_id", "patient_id", "provider_id", "diagnosis_code",  "procedure_code",  "claim_amount", "service_date"]
 
-def load_claims():
+def load_claims(filename):
     try:
     # standardize data types    
         data_types = {
-            "claim_id": "string",
+            "claim_id": "Int64",
             "patient_id": "Int64",
             "provider_id": "Int64",
             "diagnosis_code": "string",
@@ -34,7 +34,7 @@ def load_claims():
         }
 
     # fetch claim records from CSV
-        df = pd.read_csv("claims.csv", dtype=data_types)
+        df = pd.read_csv(filename, dtype=data_types)
         #verify table structure / data
         print(df.head(4))
 
@@ -94,7 +94,7 @@ def load_claims():
         output.seek(0)
 
     # copy, insert and validate valid records inserted
-        cur.copy_expert(f"COPY staging.claims (claim_id,  patient_id,  provider_id, diagnosis_code,  procedure_code,  amount, service_date) FROM STDIN WITH CSV HEADER", output)
+        cur.copy_expert(f"COPY etl.stg_claims (claim_id,  patient_id,  provider_id, diagnosis_code,  procedure_code,  amount, service_date) FROM STDIN WITH CSV HEADER", output)
         copied_count = cur.rowcount
         #print(f'{copied_count} valid records CSV inserted successfully')
 
@@ -148,4 +148,4 @@ def load_claims():
 
 
 # test function
-load_claims()
+load_claims("claims.csv")
