@@ -60,16 +60,11 @@ import pandas as pd
 import psycopg2
 from io import StringIO
 
-#from pandas.api.types import infer_dtype
-
 expected_fields = ["provider_id", "claim_amount", "claim_id", "service_date", "patient_id", "procedure_code", "diagnosis_code"]
 
 valid_cpt_codes = [99213, 80050, 93000, 99214, 71020]
 
 processedDt = dt.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
-
-import csv
-import pandas as pd
 
 expected_fields = [
     "provider_id",
@@ -81,8 +76,7 @@ expected_fields = [
     "diagnosis_code"
 ]
 
-valid_cpt_codes = {99213, 80050, 93000}
-
+valid_cpt_codes = {99213, 80050, 93000, 71020, 99214, 36415}
 
 def load_claims_v3(file_name):
    try:
