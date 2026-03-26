@@ -1,3 +1,5 @@
+-- CREATE SCHEMA internal;
+-- CREATE SCHEMA pgcrypto;
 -- CREATE SCHEMA staging;
 -- CREATE SCHEMA etl;
 
@@ -26,7 +28,6 @@ GRANT app_dev_rw TO appuser;
 
 
 
-
 SET ROLE app_dev_rw;
 
 -- DROP TABLE IF EXISTS etl.stg_claims;
@@ -42,7 +43,7 @@ CREATE TABLE IF NOT EXISTS etl.stg_claims
     service_date character varying(64) COLLATE pg_catalog."default",
     ingested_at timestamp without time zone DEFAULT now(),
 	record_hash UUID DEFAULT gen_random_uuid()
-)
+);
 
 
 -- DROP TABLE IF EXISTS etl.claims;
@@ -58,7 +59,7 @@ CREATE TABLE IF NOT EXISTS etl.claims
     service_date character varying(64) COLLATE pg_catalog."default",
     ingested_at timestamp without time zone DEFAULT now(),
 	record_hash UUID DEFAULT gen_random_uuid()
-)
+);
 
 
 

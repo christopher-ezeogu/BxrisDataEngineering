@@ -44,7 +44,7 @@ def load_claims(filename):
         actual_columns = df.columns.tolist()
         print(actual_columns)
 
-    # Schema drift validation
+    # Schema drift validation -- Ideally will Raise Notice and still process necessary fields 
         if actual_columns != REQUIRED_FIELDS:
             raise Exception(
                 f"Schema drift detected.\n"
