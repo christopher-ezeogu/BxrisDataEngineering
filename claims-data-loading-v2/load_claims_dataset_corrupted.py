@@ -41,6 +41,7 @@ These are quarantined after parsing:
 """
 import csv
 import os
+import uuid
 import datetime as dt
 import pandas as pd
 import psycopg2
@@ -51,6 +52,8 @@ expected_fields = ["provider_id", "claim_amount", "claim_id", "service_date", "p
 valid_cpt_codes = [99213, 80050, 93000, 99214, 71020]
 
 processedDt = dt.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+
+load_id = dt.datetime.now().strftime("%Y%m%d%H%M%S") + "_" + uuid.uuid4().hex[:8]
 
 expected_fields = [
     "provider_id",
@@ -63,6 +66,7 @@ expected_fields = [
 ]
 
 valid_cpt_codes = {99213, 80050, 93000, 71020, 99214, 36415}
+
 
 def load_claims_v2(file_name):
    try:
@@ -218,8 +222,12 @@ def load_claims_v2(file_name):
         # ensure patient_id is integer only & mixed / invalid patient_id like UNK
         invalid_patient_id = df[df["patient_id"].isna() | (df["patient_id"] % 1 != 0)]
         print(f"{len(invalid_patient_id)} records with invalid patient_id")
-        print(invalid_patient_id)
         bad_index.update(invalid_patient_id.index)
+
+        # ensure provider is integer only 
+        invalid_provider_id = df[df["provider_id"].isna() | (df["provider_id"] % 1 !=0)]
+        print(f"{len(invalid_provider_id)} records with invalid provider_id")
+        bad_index.update(invalid_provider_id.index)
 
         # malformed service_date
         malformed_service_date = df[df["service_date"].isna()]
@@ -237,6 +245,10 @@ def load_claims_v2(file_name):
         # ----------------------------
         business_bad_df = df.loc[sorted(bad_index)].copy()
         clean_df = df.drop(index=bad_index).copy()
+
+        # add load_id field to the batch before loading
+        business_bad_df["load_id"] = load_id
+        clean_df["load_id"] = load_id
 
         print(f"{len(clean_df)} fully clean claim records ready for load")
         print(f"{len(business_bad_df)} business-invalid claim records quarantined")
@@ -289,7 +301,7 @@ def load_claims_v2(file_name):
         output.seek(0)
 
         # copy, insert and validate valid records inserted
-        cur.copy_expert(f"COPY etl.stg_claims (provider_id, amount, claim_id, service_date, patient_id, procedure_code, diagnosis_code) FROM STDIN WITH CSV HEADER", output)
+        cur.copy_expert(f"COPY etl.stg_claims (provider_id, amount, claim_id, service_date, patient_id, procedure_code, diagnosis_code, load_id) FROM STDIN WITH CSV HEADER", output)
         copied_count = cur.rowcount
 
         # promote temp archive to final archive only after DB load succeeds
