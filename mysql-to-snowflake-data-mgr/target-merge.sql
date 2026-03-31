@@ -1,4 +1,10 @@
-CREATE OR REPLACE PROCEDURE etl.sp_merge_claims(p_load_id varchar)
+-- test function
+-- SELECT * FROM etl.merge_claims('20260329225932_5c6e3d09');
+
+-- DROP FUNCTION IF EXISTS etl.merge_claims(i_load_id varchar);
+
+CREATE OR REPLACE FUNCTION etl.merge_claims(i_load_id varchar)
+RETURNS TABLE(rejected_rows integer, upserted_rows integer)
 LANGUAGE plpgsql
 AS $$
 DECLARE
@@ -42,7 +48,7 @@ BEGIN
             ELSE 'unknown validation failure'
         END AS rejection_reason
     FROM etl.stg_claims s
-    WHERE s.load_id = p_load_id
+    WHERE s.load_id = i_load_id
       AND (
             s.claim_id IS NULL
          OR s.patient_id IS NULL
@@ -74,7 +80,7 @@ BEGIN
         SELECT
             s.*
         FROM etl.stg_claims s
-        WHERE s.load_id = p_load_id
+        WHERE s.load_id = i_load_id
           AND s.claim_id IS NOT NULL
           AND s.patient_id IS NOT NULL
           AND s.provider_id IS NOT NULL
@@ -82,7 +88,7 @@ BEGIN
           AND s.amount IS NOT NULL
           AND s.amount >= 0
           AND s.service_date IS NOT NULL
-          AND s.service_date <= CURRENT_DATE
+          AND s.service_date::DATE <= CURRENT_DATE
     ),
     ranked_rows AS (
         SELECT
@@ -113,7 +119,7 @@ BEGIN
         SELECT
             s.*
         FROM etl.stg_claims s
-        WHERE s.load_id = p_load_id
+        WHERE s.load_id = i_load_id
           AND s.claim_id IS NOT NULL
           AND s.patient_id IS NOT NULL
           AND s.provider_id IS NOT NULL
@@ -121,7 +127,7 @@ BEGIN
           AND s.amount IS NOT NULL
           AND s.amount >= 0
           AND s.service_date IS NOT NULL
-          AND s.service_date <= CURRENT_DATE
+          AND s.service_date::DATE <= CURRENT_DATE
     ),
     ranked_rows AS (
         SELECT
@@ -189,11 +195,12 @@ BEGIN
         target_rows_upserted = v_target_rows_upserted,
         status = 'SUCCESS',
         completed_at = current_timestamp
-    WHERE load_id = p_load_id;
+    WHERE load_id = i_load_id;
 
-    -- 5. Optional cleanup of stage rows for this load
-    DELETE FROM etl.stg_claims
-    WHERE load_id = p_load_id;
+    -- 5. return rejected and upserted records 
+    RETURN QUERY
+    SELECT v_target_rows_rejected,
+           v_target_rows_upserted;
 
 EXCEPTION
     WHEN OTHERS THEN
@@ -202,7 +209,7 @@ EXCEPTION
             status = 'FAILED',
             error_message = SQLERRM,
             completed_at = current_timestamp
-        WHERE load_id = p_load_id;
+        WHERE load_id = i_load_id;
 
         RAISE;
 END;
