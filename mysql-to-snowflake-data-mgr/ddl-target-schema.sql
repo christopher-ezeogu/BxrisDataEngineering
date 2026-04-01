@@ -75,3 +75,28 @@ CREATE TABLE IF NOT EXISTS etl.source_quarantine (
 	source_row_payload text,
     quarantined_at    timestamp NOT NULL DEFAULT current_timestamp
 );
+
+
+-- SELECT * FROM etl.claims_rejects;
+
+-- DROP TABLE IF EXISTS etl.claims_rejects;
+
+CREATE TABLE IF NOT EXISTS etl.claims_rejects
+(
+    reject_id bigint NOT NULL DEFAULT nextval('etl.claims_rejects_reject_id_seq'::regclass),
+    load_id character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    claim_id character varying(100) COLLATE pg_catalog."default",
+    patient_id character varying(100) COLLATE pg_catalog."default",
+    provider_id character varying(100) COLLATE pg_catalog."default",
+    diagnosis_code character varying(50) COLLATE pg_catalog."default",
+    procedure_code character varying(50) COLLATE pg_catalog."default",
+    amount numeric(18,2),
+    service_date date,
+    ingested_at timestamp without time zone,
+    record_hash character varying(64) COLLATE pg_catalog."default",
+    rejection_reason character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    rejected_at timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT claims_rejects_pkey PRIMARY KEY (reject_id)
+)
+
+TABLESPACE pg_default;

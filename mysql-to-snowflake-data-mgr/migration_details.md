@@ -1,3 +1,15 @@
+# -- TEST DATA --
+It includes 50,000 records with:
+duplicate claim_id values
+missing claim_id
+missing patient_id
+missing provider_id
+missing diagnosis_code
+valid, invalid, and missing procedure_code
+negative amount
+bad and future service_date values
+One thing to note: your table has amount numeric(18,2) NOT NULL, so rows with missing amount were not included since that would fail immediately on insert.
+
 # SQL Query - for data sorting and maintaining idempotency 
 - sorts and persist bad records(invalid field details) - "etl.claims_rejects"
 - sort and persist duplicate rocords - "etl.claims_rejects"

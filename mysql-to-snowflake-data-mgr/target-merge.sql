@@ -45,7 +45,7 @@ BEGIN
             WHEN s.amount IS NULL THEN 'missing amount'
             WHEN s.amount < 0 THEN 'negative amount'
             WHEN s.service_date IS NULL THEN 'missing service_date'
-            WHEN s.service_date:DATE > CURRENT_DATE THEN 'future service_date'
+            WHEN s.service_date::DATE > CURRENT_DATE THEN 'future service_date'
             ELSE 'unknown validation failure'
         END AS rejection_reason
     FROM etl.stg_claims s
