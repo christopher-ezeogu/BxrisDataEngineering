@@ -10,13 +10,18 @@
 - connections
 - helpers - generate load_id 
 - process claims
+    - process source data in chunks
+    - normalize the column data types
+    - split normalized data to account for valid and invalid data
+    - 
 
 Stronger version if you want this production-grade
 You should also consider:
 - chunked extraction from MySQL instead of pulling everything into memory
 - quarantine of bad source rows before COPY
 - schema validation before staging
-structured audit table for each load_id
-row count reconciliation between source, staging, and merged target
+- structured audit table for each load_id
+- row count reconciliation between source, staging, and merged target
+
 Your current code can work after these fixes, but it is still more of a small-to-medium batch script than a hardened production pipeline.
 If you want, I can give you a production-standard version with chunked reads, quarantine handling, and row reconciliation.

@@ -1,0 +1,1296 @@
+claim_id,patient_id,provider_id,diagnosis_code,procedure_code,amount,service_date,rejection_reasons,rejection_reason
+127274,925256,45668,E90.4,99202,-234.92,2022-09-12,['negative amount'],negative amount
+127276,802923,22020,T31.3,99202,1958.56,2027-05-28,['future service_date'],future service_date
+127278,502627,53978,T39.7,,1675.4,2026-02-19,['missing procedure_code'],missing procedure_code
+127280,991330,88517,I70.2,,2233.49,2023-11-12,['missing procedure_code'],missing procedure_code
+127290,209460,52562,J17.0,99202,-371.46,2021-09-25,['negative amount'],negative amount
+127292,326052,89824,S54.7,99203,1595.75,,['missing/invalid service_date'],missing/invalid service_date
+127303,11682,70443,G25.9,,949.67,2021-12-15,['missing procedure_code'],missing procedure_code
+127303,752391,3346,B28.1,,-628.74,2022-03-31,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+127310,260035,21820,I91.7,99202,1320.14,2026-07-11,['future service_date'],future service_date
+127316,579564,65459,L11.2,00000,1477.21,,['missing/invalid service_date'],missing/invalid service_date
+127317,109557,22383,,99201,1727.88,,['missing/invalid service_date'],missing/invalid service_date
+127320,676472,93775,E29.2,J5502,2095.76,,['missing/invalid service_date'],missing/invalid service_date
+127321,421054,24384,K86.2,99201,-488.17,2025-03-01,['negative amount'],negative amount
+127322,241512,94036,B71.5,,224.55,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+127323,727278,58523,T18.1,99202,-730.4,2022-04-23,['negative amount'],negative amount
+127325,516501,94244,C44.8,99201,-45.93,2027-03-19,"['negative amount', 'future service_date']",negative amount; future service_date
+127326,933538,21760,M05.9,99203,108.98,2026-08-08,['future service_date'],future service_date
+127329,946347,63359,P91.6,99203,1895.34,,['missing/invalid service_date'],missing/invalid service_date
+127330,844465,69639,M48.4,99202,-355.91,2024-11-09,['negative amount'],negative amount
+127331,902741,47370,,99201,1878.56,2026-07-07,['future service_date'],future service_date
+127340,37216,76874,Z14.8,99203,2487.17,2028-01-21,['future service_date'],future service_date
+127343,46117,52619,D68.8,,584.16,2026-02-18,['missing procedure_code'],missing procedure_code
+127348,768132,17450,H83.4,,1839.8,2024-11-23,['missing procedure_code'],missing procedure_code
+127354,254046,20408,L88.7,99201,-41.91,2025-06-25,['negative amount'],negative amount
+127357,329499,19659,R88.8,,1891.08,2022-06-19,['missing procedure_code'],missing procedure_code
+127363,952005,61351,T63.2,,1580.84,2026-03-28,['missing procedure_code'],missing procedure_code
+127370,726153,20717,I09.8,,2257.92,2023-08-21,['missing procedure_code'],missing procedure_code
+127382,711665,62565,E65.1,99202,521.32,,['missing/invalid service_date'],missing/invalid service_date
+127384,129828,93531,,J5502,218.7,,['missing/invalid service_date'],missing/invalid service_date
+127393,957692,48734,F81.5,99202,310.78,,['missing/invalid service_date'],missing/invalid service_date
+127394,126321,662,A87.0,J5502,-386.01,2023-11-22,['negative amount'],negative amount
+127397,941833,27671,,PROCX,-486.85,2024-08-21,['negative amount'],negative amount
+127398,669135,30676,F32.9,99202,-463.03,2023-10-14,['negative amount'],negative amount
+127412,756079,93143,C92.6,,1432.87,2025-10-12,['missing procedure_code'],missing procedure_code
+127413,7311,18731,B57.3,99202,1661.54,2027-10-27,['future service_date'],future service_date
+127414,968750,32903,O29.9,,456.37,2022-03-29,['missing procedure_code'],missing procedure_code
+127415,188198,68911,B09.8,99202,-691.23,2025-06-25,['negative amount'],negative amount
+127422,531979,55651,B67.3,,2045.47,2024-01-23,['missing procedure_code'],missing procedure_code
+127439,113951,40287,B33.6,J5502,1945.15,,['missing/invalid service_date'],missing/invalid service_date
+127441,21071,11074,F90.2,J5502,2201.74,,['missing/invalid service_date'],missing/invalid service_date
+127450,184281,31670,S03.8,99201,-416.21,2021-05-27,['negative amount'],negative amount
+127453,882656,41398,D17.3,,1159.59,2022-12-06,['missing procedure_code'],missing procedure_code
+127457,75415,82488,M14.8,99203,-254.35,2021-09-10,['negative amount'],negative amount
+127458,533350,15112,G66.4,99201,553.72,2027-02-22,['future service_date'],future service_date
+127460,767868,72737,G94.3,,1976.03,2021-01-19,['missing procedure_code'],missing procedure_code
+127471,835527,57972,K56.8,J5502,-407.04,2022-04-30,['negative amount'],negative amount
+127476,801233,19459,B82.6,99203,408.26,,['missing/invalid service_date'],missing/invalid service_date
+127487,686237,11293,M69.5,,428.73,2023-07-04,['missing procedure_code'],missing procedure_code
+127491,933612,95908,H36.6,,1440.95,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+127493,606853,41075,B28.3,,2077.8,2021-03-02,['missing procedure_code'],missing procedure_code
+127502,74560,56650,H70.9,J5502,1765.92,,['missing/invalid service_date'],missing/invalid service_date
+127509,909684,59643,F90.7,J5502,1147.24,,['missing/invalid service_date'],missing/invalid service_date
+127518,706405,75194,A04.7,,2241.04,2026-03-21,['missing procedure_code'],missing procedure_code
+127520,40231,90330,I48.2,J5502,-222.69,2021-10-19,['negative amount'],negative amount
+127527,983591,39164,A94.0,00000,-610.1,2026-03-05,['negative amount'],negative amount
+127531,151764,25184,M85.1,,2477.41,2021-08-23,['missing procedure_code'],missing procedure_code
+127540,4816,7514,D83.5,,133.47,2021-08-09,['missing procedure_code'],missing procedure_code
+127541,235567,36447,O09.5,,688.71,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+127549,13845,35231,,,2331.71,2023-06-22,['missing procedure_code'],missing procedure_code
+127550,338128,17412,H29.7,99202,317.33,,['missing/invalid service_date'],missing/invalid service_date
+127551,106804,4647,,99203,-433.19,2023-03-09,['negative amount'],negative amount
+127554,73696,37361,H05.0,99203,286.53,2026-05-21,['future service_date'],future service_date
+127559,265880,15540,B96.4,99203,428.65,,['missing/invalid service_date'],missing/invalid service_date
+127569,324615,52910,G43.3,99203,-715.43,2026-02-13,['negative amount'],negative amount
+127571,376725,80529,O65.7,,1130.36,2024-02-10,['missing procedure_code'],missing procedure_code
+127579,133592,10937,M57.7,99203,1199.17,,['missing/invalid service_date'],missing/invalid service_date
+127584,786259,64096,Q21.9,99201,2279.84,,['missing/invalid service_date'],missing/invalid service_date
+127588,912405,46711,Q90.4,99202,-11.58,2024-09-03,['negative amount'],negative amount
+127590,881612,7893,R69.9,99203,1060.49,,['missing/invalid service_date'],missing/invalid service_date
+127592,401212,46517,Q15.3,99201,-358.5,2025-04-22,['negative amount'],negative amount
+127602,117587,11160,G19.8,,214.2,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+127603,234058,64843,,99203,-456.73,2024-10-06,['negative amount'],negative amount
+127603,374997,87476,F98.5,99202,-32.35,2025-02-28,['negative amount'],negative amount
+127604,648818,28109,,99203,681.08,2026-06-15,['future service_date'],future service_date
+127610,788477,29620,L72.0,99202,-440.22,2027-04-26,"['negative amount', 'future service_date']",negative amount; future service_date
+127611,599335,18550,I54.4,,1108.29,2023-08-05,['missing procedure_code'],missing procedure_code
+127616,200370,21258,I23.5,,194.08,2022-04-28,['missing procedure_code'],missing procedure_code
+127622,457078,34918,C57.3,99201,-296.22,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+127625,522412,40970,M61.9,99203,2414.64,,['missing/invalid service_date'],missing/invalid service_date
+127627,460752,178,S40.0,,2233.28,2023-03-18,['missing procedure_code'],missing procedure_code
+127631,16462,43409,,,1010.58,2024-11-19,['missing procedure_code'],missing procedure_code
+127636,486794,88663,T95.0,J5502,743.12,2027-02-15,['future service_date'],future service_date
+127642,147235,36246,N66.9,99201,2135.51,,['missing/invalid service_date'],missing/invalid service_date
+127647,778355,59661,L28.7,,1932.09,2023-05-03,['missing procedure_code'],missing procedure_code
+127649,286456,3816,E94.6,99202,-320.59,2021-04-05,['negative amount'],negative amount
+127652,364013,47816,I87.3,,797.84,2023-12-11,['missing procedure_code'],missing procedure_code
+127685,168594,44303,T23.1,99202,1890.4,2026-04-29,['future service_date'],future service_date
+127688,66615,66526,C37.5,99201,152.41,2028-01-15,['future service_date'],future service_date
+127706,800830,49244,M04.0,J5502,449.99,2028-01-10,['future service_date'],future service_date
+127713,662446,62952,T13.7,,2453.39,2025-07-26,['missing procedure_code'],missing procedure_code
+127714,720476,19950,K75.1,99201,1252.46,2026-07-08,['future service_date'],future service_date
+127717,298667,19663,M37.4,J5502,-349.89,2021-02-22,['negative amount'],negative amount
+127720,34903,89225,Q77.2,99201,1606.96,,['missing/invalid service_date'],missing/invalid service_date
+127722,954836,90261,O32.2,,781.89,2021-02-25,['missing procedure_code'],missing procedure_code
+127729,304810,40828,P71.7,99202,-198.36,2027-10-21,"['negative amount', 'future service_date']",negative amount; future service_date
+127734,265520,27912,D24.5,99201,1791.2,2026-04-11,['future service_date'],future service_date
+127737,277659,27220,K41.2,99201,-583.33,2024-04-24,['negative amount'],negative amount
+127742,286406,65590,F02.3,99203,-112.17,2025-08-04,['negative amount'],negative amount
+127748,452316,15932,Q87.9,99202,185.36,2026-12-25,['future service_date'],future service_date
+127752,701416,1495,E44.4,,1635.15,2023-10-19,['missing procedure_code'],missing procedure_code
+127769,688694,6216,S03.1,,1848.44,2021-02-11,['missing procedure_code'],missing procedure_code
+127771,238076,7407,R72.9,J55A2,1676.62,,['missing/invalid service_date'],missing/invalid service_date
+127773,957005,58508,I91.3,99201,2468.77,2026-12-05,['future service_date'],future service_date
+127777,736673,55349,Z84.4,,2290.99,2021-10-20,['missing procedure_code'],missing procedure_code
+127778,153994,61737,,99202,916.87,,['missing/invalid service_date'],missing/invalid service_date
+127778,900872,8629,I21.8,,223.63,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+127786,216347,75568,M56.0,00000,230.05,,['missing/invalid service_date'],missing/invalid service_date
+127790,550426,40820,J00.3,J55A2,408.92,2027-10-03,['future service_date'],future service_date
+127793,625105,96430,B75.6,99202,-242.05,2023-12-01,['negative amount'],negative amount
+127795,107152,23987,Z43.1,J5502,-251.18,2023-03-11,['negative amount'],negative amount
+127805,6989,74959,Q19.5,99201,-155.17,2022-03-17,['negative amount'],negative amount
+127815,897176,7720,J40.2,99203,-33.4,2022-06-03,['negative amount'],negative amount
+127816,972591,56574,Z52.6,00000,-440.48,2024-10-14,['negative amount'],negative amount
+127818,489661,67264,Q72.1,,2123.99,2021-04-01,['missing procedure_code'],missing procedure_code
+127831,894726,96913,D64.0,,564.2,2026-02-09,['missing procedure_code'],missing procedure_code
+127837,364839,30387,M46.6,ZZ999,2008.36,,['missing/invalid service_date'],missing/invalid service_date
+127851,109896,71030,I77.6,99201,-19.2,2023-06-18,['negative amount'],negative amount
+127852,563364,16931,P96.1,99203,-310.97,2025-04-24,['negative amount'],negative amount
+127856,317433,73841,O46.2,99203,-20.16,2024-06-29,['negative amount'],negative amount
+127860,41374,15110,M06.3,,169.29,2022-08-15,['missing procedure_code'],missing procedure_code
+127866,805147,57643,,J55A2,1305.27,,['missing/invalid service_date'],missing/invalid service_date
+127869,470414,12854,P05.4,J5502,2443.9,2026-05-10,['future service_date'],future service_date
+127871,334511,37451,R68.3,J5502,1449.12,,['missing/invalid service_date'],missing/invalid service_date
+127872,635061,43167,F83.4,J5502,-87.91,2023-02-05,['negative amount'],negative amount
+127873,772128,46405,A36.9,99202,838.53,,['missing/invalid service_date'],missing/invalid service_date
+127897,265672,60032,,99201,875.21,,['missing/invalid service_date'],missing/invalid service_date
+127901,984514,61733,D28.3,J5502,2121.18,,['missing/invalid service_date'],missing/invalid service_date
+127902,377082,94951,D87.7,99203,-49.1,2025-08-26,['negative amount'],negative amount
+127904,968576,41530,T76.6,99203,1887.77,2026-08-22,['future service_date'],future service_date
+127907,522241,27679,I31.8,99203,2458.87,2026-05-17,['future service_date'],future service_date
+127910,418176,99880,H96.7,,899.0,2021-07-28,['missing procedure_code'],missing procedure_code
+127911,753798,27636,H65.2,,1987.78,2025-03-21,['missing procedure_code'],missing procedure_code
+127912,350248,208,S92.5,,1388.16,2023-12-03,['missing procedure_code'],missing procedure_code
+127915,314434,66490,O99.2,J5502,410.07,2026-04-28,['future service_date'],future service_date
+127922,798834,95576,K73.8,,-218.84,2027-12-19,"['missing procedure_code', 'negative amount', 'future service_date']",missing procedure_code; negative amount; future service_date
+127924,703712,44500,E17.8,J5502,892.55,,['missing/invalid service_date'],missing/invalid service_date
+127935,933312,95040,F57.0,99202,-532.86,2025-09-15,['negative amount'],negative amount
+127941,614976,74416,K83.5,ABC12,-1.74,2022-01-29,['negative amount'],negative amount
+127947,559849,22230,M13.1,,992.17,2021-12-13,['missing procedure_code'],missing procedure_code
+127950,811154,38938,K62.0,,2158.77,2024-12-23,['missing procedure_code'],missing procedure_code
+127950,156953,71838,P22.7,99201,1615.46,2026-12-09,['future service_date'],future service_date
+127951,951305,60753,F67.9,99202,199.4,2026-08-19,['future service_date'],future service_date
+127954,76104,22453,C10.4,99203,-377.17,2024-11-08,['negative amount'],negative amount
+127955,494050,86898,F79.3,,568.9,2023-10-03,['missing procedure_code'],missing procedure_code
+127984,525893,18010,P31.4,,57.47,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+127986,156055,75459,L19.6,,1723.35,2025-07-05,['missing procedure_code'],missing procedure_code
+127989,379514,47867,G85.2,99203,2022.56,,['missing/invalid service_date'],missing/invalid service_date
+128007,600923,10299,R70.0,99203,1391.45,,['missing/invalid service_date'],missing/invalid service_date
+128010,973010,60452,,99201,-443.14,2021-07-09,['negative amount'],negative amount
+128014,379325,85233,M17.7,99201,-212.24,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+128023,48985,37104,,99201,-110.39,2025-08-24,['negative amount'],negative amount
+128026,915181,58600,N07.1,99201,-221.04,2021-06-27,['negative amount'],negative amount
+128030,297289,34365,Z74.5,,1226.28,2024-09-19,['missing procedure_code'],missing procedure_code
+128033,322588,72961,I45.6,99202,1598.62,,['missing/invalid service_date'],missing/invalid service_date
+128036,590610,82249,,99203,-568.72,2026-03-20,['negative amount'],negative amount
+128042,353918,74550,Z28.8,J5502,2001.7,2026-05-29,['future service_date'],future service_date
+128050,682149,60918,P05.4,99202,650.59,2027-12-22,['future service_date'],future service_date
+128051,915037,34421,I59.2,99203,2333.25,2027-05-21,['future service_date'],future service_date
+128052,73870,2423,K25.5,99203,2185.75,2026-07-05,['future service_date'],future service_date
+128057,418556,52546,F71.8,123,1859.23,,['missing/invalid service_date'],missing/invalid service_date
+128062,234635,74088,G58.4,,-656.47,2024-04-19,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+128063,963839,44082,B25.2,,1785.33,2022-01-15,['missing procedure_code'],missing procedure_code
+128067,58685,32775,N13.9,99203,123.8,2028-01-15,['future service_date'],future service_date
+128069,842729,61773,K30.4,J5502,1278.92,2026-04-03,['future service_date'],future service_date
+128071,172531,41432,,99201,1463.77,2027-01-20,['future service_date'],future service_date
+128072,236448,83168,E19.1,,2002.61,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+128076,265582,94786,B26.8,,1476.72,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+128078,5485,37267,J69.2,99201,1441.07,,['missing/invalid service_date'],missing/invalid service_date
+128079,974235,21749,J96.4,,-292.62,2023-07-28,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+128081,192128,29929,C70.2,99202,2288.95,2026-10-26,['future service_date'],future service_date
+128100,111798,46507,J62.5,,2212.1,2024-01-21,['missing procedure_code'],missing procedure_code
+128101,601650,37972,K09.6,99201,1565.08,,['missing/invalid service_date'],missing/invalid service_date
+128106,355791,55837,T78.8,ABC12,917.05,2026-09-09,['future service_date'],future service_date
+128108,560520,34376,P06.1,,57.4,2022-02-09,['missing procedure_code'],missing procedure_code
+128127,585606,29598,G77.6,99201,-728.06,2024-12-15,['negative amount'],negative amount
+128128,196476,70625,N54.8,,1276.74,2021-09-14,['missing procedure_code'],missing procedure_code
+128138,105055,11490,Z12.2,99202,1284.77,,['missing/invalid service_date'],missing/invalid service_date
+128149,251973,96595,Z83.1,,934.3,2022-12-16,['missing procedure_code'],missing procedure_code
+128163,985952,76123,G27.3,99202,784.98,,['missing/invalid service_date'],missing/invalid service_date
+128164,634297,56780,C52.5,99202,278.1,2026-10-18,['future service_date'],future service_date
+128167,31793,22579,I30.0,99201,-174.53,2026-04-29,"['negative amount', 'future service_date']",negative amount; future service_date
+128169,343328,55487,F05.4,99201,103.25,,['missing/invalid service_date'],missing/invalid service_date
+128173,820118,57161,R38.8,99202,-12.82,2025-06-12,['negative amount'],negative amount
+128178,743132,55353,M27.7,99201,680.69,2026-12-13,['future service_date'],future service_date
+128180,667809,24766,S95.6,99203,-74.22,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+128182,598480,64978,S37.5,J5502,2070.36,,['missing/invalid service_date'],missing/invalid service_date
+128187,684337,57081,B47.1,99201,723.11,,['missing/invalid service_date'],missing/invalid service_date
+128188,465336,25568,Q91.1,99201,-455.46,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+128194,110012,12575,F36.4,99203,-363.69,2021-11-14,['negative amount'],negative amount
+128197,644536,81907,P61.1,99203,-183.18,2024-12-23,['negative amount'],negative amount
+128203,386615,46680,O56.2,99202,203.46,,['missing/invalid service_date'],missing/invalid service_date
+128204,350848,52468,R47.8,99202,88.15,2027-11-03,['future service_date'],future service_date
+128212,67096,70992,S76.8,,1494.99,2027-04-07,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+128219,353110,74521,Z45.2,99202,1480.99,,['missing/invalid service_date'],missing/invalid service_date
+128223,689131,74691,A84.0,,156.43,2025-11-04,['missing procedure_code'],missing procedure_code
+128232,915969,60472,R45.1,,2030.94,2022-06-01,['missing procedure_code'],missing procedure_code
+128249,715744,64157,T61.2,99201,1074.19,2026-12-27,['future service_date'],future service_date
+128256,1928,41933,,99202,1217.36,2026-07-28,['future service_date'],future service_date
+128258,37267,7060,J33.6,99201,1157.59,,['missing/invalid service_date'],missing/invalid service_date
+128271,501292,84067,J85.3,99201,-341.1,2026-06-26,"['negative amount', 'future service_date']",negative amount; future service_date
+128279,890885,6450,K66.2,,418.43,2026-05-21,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+128285,246496,41370,G91.9,99201,-539.5,2026-02-03,['negative amount'],negative amount
+128297,351243,4810,N40.5,99202,50.83,,['missing/invalid service_date'],missing/invalid service_date
+128298,772132,60267,I88.1,99203,2105.6,,['missing/invalid service_date'],missing/invalid service_date
+128299,349094,11816,B12.1,,759.49,2024-04-29,['missing procedure_code'],missing procedure_code
+128317,282438,78903,F96.8,99201,-86.03,2022-02-25,['negative amount'],negative amount
+128318,832136,30494,S12.7,,1533.02,2024-04-23,['missing procedure_code'],missing procedure_code
+128320,673535,96489,G92.2,,1821.16,2021-04-23,['missing procedure_code'],missing procedure_code
+128322,915929,99993,G26.5,,1155.02,2024-03-20,['missing procedure_code'],missing procedure_code
+128324,962175,99833,R37.0,J55A2,271.67,,['missing/invalid service_date'],missing/invalid service_date
+128327,520117,43845,C94.0,99201,-464.25,2023-03-23,['negative amount'],negative amount
+128327,727646,96934,B59.5,,1094.88,2022-05-12,['missing procedure_code'],missing procedure_code
+128330,910980,97546,J88.7,J5502,2374.62,2026-08-28,['future service_date'],future service_date
+128331,443330,55035,I78.2,99203,1591.62,2026-10-25,['future service_date'],future service_date
+128333,806438,94794,M14.1,,1129.73,2024-10-15,['missing procedure_code'],missing procedure_code
+128351,963130,73149,I95.4,J5502,372.5,,['missing/invalid service_date'],missing/invalid service_date
+128352,554476,44073,P95.4,,1081.2,2023-08-17,['missing procedure_code'],missing procedure_code
+128353,671502,44545,L60.1,99203,2075.68,2026-09-10,['future service_date'],future service_date
+128360,326403,76436,H94.1,,2080.12,2025-01-31,['missing procedure_code'],missing procedure_code
+128363,542329,60740,,99202,140.23,,['missing/invalid service_date'],missing/invalid service_date
+128365,767336,20690,G62.0,,2083.7,2024-06-08,['missing procedure_code'],missing procedure_code
+128368,791915,73476,G40.1,99203,66.38,,['missing/invalid service_date'],missing/invalid service_date
+128371,50433,13230,Z85.2,00000,470.86,,['missing/invalid service_date'],missing/invalid service_date
+128381,995925,55619,D74.1,99201,331.79,,['missing/invalid service_date'],missing/invalid service_date
+128382,367185,73749,F58.6,99203,1371.27,2027-11-18,['future service_date'],future service_date
+128386,438429,86354,L58.2,99203,-613.87,2024-12-28,['negative amount'],negative amount
+128389,675668,82358,M79.4,,786.13,2021-03-06,['missing procedure_code'],missing procedure_code
+128393,729509,89516,Z63.6,99203,-213.09,2021-12-10,['negative amount'],negative amount
+128400,762131,64630,M49.0,99202,483.87,2026-08-10,['future service_date'],future service_date
+128402,335774,46219,E88.3,,558.85,2025-08-20,['missing procedure_code'],missing procedure_code
+128403,643401,1777,H10.5,99202,-523.68,2021-09-20,['negative amount'],negative amount
+128407,767825,28865,I00.4,,2313.23,2023-02-05,['missing procedure_code'],missing procedure_code
+128412,236852,17338,I48.2,,1147.88,2023-04-01,['missing procedure_code'],missing procedure_code
+128413,199439,32238,O97.2,,1152.44,2025-12-07,['missing procedure_code'],missing procedure_code
+128414,91058,46902,B31.8,,1580.54,2024-12-22,['missing procedure_code'],missing procedure_code
+128415,352685,2484,A74.3,,661.69,2023-01-12,['missing procedure_code'],missing procedure_code
+128417,534935,27311,F41.1,,655.13,2027-05-14,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+128420,790193,22352,Q46.7,,194.59,2022-04-08,['missing procedure_code'],missing procedure_code
+128422,171699,68247,C94.1,99201,2248.72,2026-10-28,['future service_date'],future service_date
+128426,627609,95464,E52.9,,272.12,2025-11-24,['missing procedure_code'],missing procedure_code
+128429,817207,75772,J16.7,J5502,1552.98,,['missing/invalid service_date'],missing/invalid service_date
+128431,412835,7689,C50.6,,2202.07,2025-02-22,['missing procedure_code'],missing procedure_code
+128437,349727,94387,,,300.6,2027-05-22,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+128438,953399,60661,,99201,2076.94,,['missing/invalid service_date'],missing/invalid service_date
+128444,6703,12499,L19.3,99202,2049.44,,['missing/invalid service_date'],missing/invalid service_date
+128451,677345,42296,H04.2,99201,-555.85,2023-05-23,['negative amount'],negative amount
+128452,225946,54459,M17.0,,233.47,2025-10-20,['missing procedure_code'],missing procedure_code
+128456,266881,19879,A46.2,99202,1537.78,2026-12-26,['future service_date'],future service_date
+128462,821139,72601,A98.8,,2105.42,2025-02-05,['missing procedure_code'],missing procedure_code
+128468,352031,40283,B24.8,99201,-504.58,2024-10-28,['negative amount'],negative amount
+128470,115042,10852,T52.6,J5502,-381.18,2024-01-11,['negative amount'],negative amount
+128472,314230,79783,O92.0,,2388.67,2022-11-09,['missing procedure_code'],missing procedure_code
+128479,455212,24415,Z94.2,99202,1370.2,2028-02-11,['future service_date'],future service_date
+128480,342525,75188,P16.6,,1005.34,2026-03-18,['missing procedure_code'],missing procedure_code
+128489,110033,56054,E01.1,99203,1184.31,,['missing/invalid service_date'],missing/invalid service_date
+128492,484401,85853,G20.1,99202,215.73,2026-06-09,['future service_date'],future service_date
+128497,178041,88159,R28.6,99202,2150.74,,['missing/invalid service_date'],missing/invalid service_date
+128499,199582,88277,N92.4,99203,-61.5,2024-07-01,['negative amount'],negative amount
+128500,161571,37288,K75.7,J5502,-428.84,2021-09-11,['negative amount'],negative amount
+128503,538678,39964,T49.3,99201,2414.33,,['missing/invalid service_date'],missing/invalid service_date
+128504,951041,70989,J87.0,99201,2095.63,,['missing/invalid service_date'],missing/invalid service_date
+128511,29475,55569,K14.4,99203,2073.03,2026-06-08,['future service_date'],future service_date
+128518,179147,10815,K76.6,,559.1,2021-02-24,['missing procedure_code'],missing procedure_code
+128528,486398,63646,B25.6,,232.51,2026-03-29,['missing procedure_code'],missing procedure_code
+128529,544216,43450,I80.8,99203,-145.64,2023-08-01,['negative amount'],negative amount
+128530,741306,19626,F01.0,,1633.97,2022-12-25,['missing procedure_code'],missing procedure_code
+128538,776202,82978,F57.4,99201,-278.4,2021-12-16,['negative amount'],negative amount
+128540,376152,2602,M26.2,99203,-640.03,2022-10-13,['negative amount'],negative amount
+128544,275246,66137,N44.1,J5502,-366.06,2021-04-07,['negative amount'],negative amount
+128545,557253,86069,R36.5,99202,-505.92,2023-01-13,['negative amount'],negative amount
+128551,806837,92384,D50.5,99201,516.38,2026-08-06,['future service_date'],future service_date
+128555,539826,98003,I88.1,,2382.31,2024-01-17,['missing procedure_code'],missing procedure_code
+128560,322690,72075,P73.5,,959.75,2024-02-14,['missing procedure_code'],missing procedure_code
+128562,876888,52560,D79.2,J5502,918.13,2027-12-01,['future service_date'],future service_date
+128567,599520,65966,F84.6,99202,-159.59,2021-01-31,['negative amount'],negative amount
+128568,924562,71288,T87.4,J5502,753.54,,['missing/invalid service_date'],missing/invalid service_date
+128569,306927,36342,T88.5,99201,-737.93,2024-01-15,['negative amount'],negative amount
+128572,375389,40676,N29.3,J5502,-382.11,2024-04-09,['negative amount'],negative amount
+128578,513130,18364,I36.8,J5502,-721.44,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+128581,104170,61423,E05.3,99203,552.49,,['missing/invalid service_date'],missing/invalid service_date
+128583,207737,2499,D01.7,,-747.21,2025-06-19,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+128605,950018,3386,G18.3,J5502,1594.93,,['missing/invalid service_date'],missing/invalid service_date
+128607,646590,19549,E88.9,,91.15,2023-11-15,['missing procedure_code'],missing procedure_code
+128618,587148,89022,E48.2,,1214.83,2022-09-10,['missing procedure_code'],missing procedure_code
+128621,488882,13569,N00.6,,1193.78,2022-12-14,['missing procedure_code'],missing procedure_code
+128634,358824,29268,B32.4,J5502,2359.59,2027-06-09,['future service_date'],future service_date
+128636,869077,62617,R60.4,99201,805.11,2027-12-07,['future service_date'],future service_date
+128648,681363,56657,I40.8,99201,-272.95,2022-01-31,['negative amount'],negative amount
+128653,899837,38149,M85.4,,1214.85,2023-01-04,['missing procedure_code'],missing procedure_code
+128654,784644,25624,J57.7,,2203.54,2027-09-19,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+128661,547857,49666,N63.9,99202,-669.71,2022-06-25,['negative amount'],negative amount
+128666,345013,9882,H87.9,,1105.95,2024-09-10,['missing procedure_code'],missing procedure_code
+128668,662256,21092,C98.0,J5502,638.11,2027-04-17,['future service_date'],future service_date
+128681,225302,57935,N05.3,J5502,1426.53,2027-10-27,['future service_date'],future service_date
+128682,907242,10110,R82.2,99203,-116.33,2022-10-09,['negative amount'],negative amount
+128692,754716,32544,Z18.5,99201,-738.6,2024-04-28,['negative amount'],negative amount
+128702,369953,19046,B67.7,99202,-134.15,2025-04-29,['negative amount'],negative amount
+128703,469146,60976,P09.8,99201,1924.34,,['missing/invalid service_date'],missing/invalid service_date
+128705,193370,44817,C88.1,,921.23,2025-09-02,['missing procedure_code'],missing procedure_code
+128713,568323,59504,D49.3,99201,1494.75,2027-06-11,['future service_date'],future service_date
+128716,657898,25635,Z64.4,99201,2042.56,,['missing/invalid service_date'],missing/invalid service_date
+128724,410500,90078,C70.7,,1131.89,2025-07-19,['missing procedure_code'],missing procedure_code
+128738,311320,582,,J5502,-571.84,2024-04-17,['negative amount'],negative amount
+128749,396123,58471,,99203,1409.94,2027-04-26,['future service_date'],future service_date
+128754,335168,83088,F24.4,,1758.72,2023-08-05,['missing procedure_code'],missing procedure_code
+128767,900773,16765,G15.5,,-500.42,2021-08-05,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+128772,578569,96985,S86.6,99202,-349.58,2021-06-26,['negative amount'],negative amount
+128778,733343,49370,,,1020.45,2025-12-22,['missing procedure_code'],missing procedure_code
+128786,380064,39290,Z21.0,,1424.78,2026-09-29,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+128790,328048,98533,L71.9,,1927.72,2025-11-29,['missing procedure_code'],missing procedure_code
+128793,709997,33580,M10.4,,2476.83,2023-05-31,['missing procedure_code'],missing procedure_code
+128797,969240,70607,N15.1,99202,2496.54,2026-09-13,['future service_date'],future service_date
+128807,432184,73122,Z99.8,J5502,-10.16,2025-04-05,['negative amount'],negative amount
+128809,372384,762,D91.5,,403.94,2021-03-03,['missing procedure_code'],missing procedure_code
+128815,329867,92917,J83.2,,1772.59,2025-02-12,['missing procedure_code'],missing procedure_code
+128821,190511,53846,E30.2,PROCX,-12.91,2024-09-17,['negative amount'],negative amount
+128823,564614,40274,N70.2,99202,1347.92,,['missing/invalid service_date'],missing/invalid service_date
+128824,685256,56981,L08.0,99203,762.79,2026-09-11,['future service_date'],future service_date
+128834,631057,96551,L88.6,,2434.75,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+128837,491766,56275,H80.6,99202,642.79,,['missing/invalid service_date'],missing/invalid service_date
+128843,442833,18838,B54.2,99202,-522.74,2023-08-10,['negative amount'],negative amount
+128855,839576,59584,K51.2,J5502,-28.68,2026-02-18,['negative amount'],negative amount
+128860,166981,49640,M51.2,,1264.94,2021-06-15,['missing procedure_code'],missing procedure_code
+128865,968019,42280,,99203,-470.57,2023-04-06,['negative amount'],negative amount
+128868,929035,66819,D97.9,99201,1754.68,2027-09-24,['future service_date'],future service_date
+128873,284319,45988,,99201,487.96,2026-06-27,['future service_date'],future service_date
+128875,979436,17233,B97.9,99201,-441.47,2024-07-16,['negative amount'],negative amount
+128878,81386,21592,,99202,1485.75,2027-05-08,['future service_date'],future service_date
+128880,646085,44042,J48.3,99201,1825.9,2028-01-25,['future service_date'],future service_date
+128884,18775,59606,G60.3,,919.9,2024-03-29,['missing procedure_code'],missing procedure_code
+128891,344000,74103,B96.4,99203,-152.89,2024-08-07,['negative amount'],negative amount
+128899,381592,8165,C83.6,,985.77,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+128902,353666,76401,M09.8,99203,403.06,,['missing/invalid service_date'],missing/invalid service_date
+128905,264391,40228,O59.5,,294.94,2026-06-21,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+128906,739195,60073,A56.5,99203,2109.46,2027-07-27,['future service_date'],future service_date
+128907,139425,94671,G89.9,99203,1260.17,,['missing/invalid service_date'],missing/invalid service_date
+128912,679066,20950,F51.4,J5502,1511.18,,['missing/invalid service_date'],missing/invalid service_date
+128918,483004,82156,A01.0,99201,231.42,2026-11-05,['future service_date'],future service_date
+128923,121464,87209,M54.8,99203,-551.38,2024-10-08,['negative amount'],negative amount
+128924,682263,60179,S21.9,ZZ999,2483.75,,['missing/invalid service_date'],missing/invalid service_date
+128932,244266,16447,,99201,147.93,,['missing/invalid service_date'],missing/invalid service_date
+128941,580913,39040,B45.2,J5502,-714.96,2022-06-06,['negative amount'],negative amount
+128947,633952,50961,J92.7,,1542.36,2026-03-28,['missing procedure_code'],missing procedure_code
+128948,382725,13916,N28.4,,1696.72,2027-08-12,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+128954,236449,73009,L20.7,,580.86,2026-01-08,['missing procedure_code'],missing procedure_code
+128964,733468,35186,M64.1,99202,139.46,2026-04-09,['future service_date'],future service_date
+128969,77998,87016,S32.8,,742.13,2021-03-23,['missing procedure_code'],missing procedure_code
+128976,647371,78709,Q79.5,,1389.28,2022-01-23,['missing procedure_code'],missing procedure_code
+128982,358897,52022,D37.4,J5502,1339.62,2026-07-23,['future service_date'],future service_date
+128991,76292,95457,P91.6,99201,1854.36,,['missing/invalid service_date'],missing/invalid service_date
+128995,987232,58833,Q52.8,,1714.56,2022-04-30,['missing procedure_code'],missing procedure_code
+129000,371769,74681,I41.1,,243.46,2025-12-22,['missing procedure_code'],missing procedure_code
+129021,926793,10411,Z98.3,J5502,1977.72,,['missing/invalid service_date'],missing/invalid service_date
+129024,805688,12236,K08.5,99202,-739.01,2025-08-22,['negative amount'],negative amount
+129027,748343,55247,J84.1,00000,1176.32,,['missing/invalid service_date'],missing/invalid service_date
+129043,505151,20228,M04.2,99203,1496.53,,['missing/invalid service_date'],missing/invalid service_date
+129051,977625,76226,L78.0,,1520.01,2022-10-27,['missing procedure_code'],missing procedure_code
+129053,571740,19844,M64.7,99202,-723.18,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+129063,815113,50949,C96.5,J5502,-529.53,2021-03-21,['negative amount'],negative amount
+129065,864086,92065,E74.8,J5502,2370.73,2026-06-10,['future service_date'],future service_date
+129069,185476,29107,Q00.3,99202,-129.2,2026-12-04,"['negative amount', 'future service_date']",negative amount; future service_date
+129077,831670,99956,J51.4,99202,-83.79,2025-10-10,['negative amount'],negative amount
+129088,170671,94026,K08.7,99203,85.63,2027-11-02,['future service_date'],future service_date
+129090,51243,30634,B95.6,99203,-49.62,2024-02-13,['negative amount'],negative amount
+129095,364793,47204,C69.3,J5502,2193.46,,['missing/invalid service_date'],missing/invalid service_date
+129102,986325,19426,T97.9,99203,470.5,,['missing/invalid service_date'],missing/invalid service_date
+129108,644318,53898,I78.2,99202,-652.58,2022-08-29,['negative amount'],negative amount
+129116,220316,51353,H34.3,99203,2271.95,2026-11-22,['future service_date'],future service_date
+129117,777728,73963,,99202,916.92,,['missing/invalid service_date'],missing/invalid service_date
+129124,547548,34970,M33.6,ABC12,-501.88,2021-04-27,['negative amount'],negative amount
+129128,461507,24329,E15.6,99202,1021.23,,['missing/invalid service_date'],missing/invalid service_date
+129129,11858,66325,D11.9,,1820.52,2023-11-09,['missing procedure_code'],missing procedure_code
+129135,283402,18699,C53.5,99202,230.74,,['missing/invalid service_date'],missing/invalid service_date
+129139,538408,8895,F02.8,99202,2174.07,2027-08-26,['future service_date'],future service_date
+129150,272288,11909,,,2392.78,2024-03-31,['missing procedure_code'],missing procedure_code
+129155,702893,8358,B81.7,99203,-711.62,2022-03-01,['negative amount'],negative amount
+129161,854707,5572,B99.5,PROCX,-584.61,2023-10-08,['negative amount'],negative amount
+129163,113229,95227,J40.5,99201,2396.79,,['missing/invalid service_date'],missing/invalid service_date
+129169,800145,99945,T47.4,99201,236.12,,['missing/invalid service_date'],missing/invalid service_date
+129184,895333,70368,A22.6,99202,-742.45,2022-04-08,['negative amount'],negative amount
+129185,327915,45749,M53.5,,801.53,2024-04-18,['missing procedure_code'],missing procedure_code
+129190,328272,18931,I51.0,,2344.22,2022-08-07,['missing procedure_code'],missing procedure_code
+129197,337385,77340,Q74.8,,2439.85,2021-03-31,['missing procedure_code'],missing procedure_code
+129198,475662,35488,J13.8,99203,2378.61,,['missing/invalid service_date'],missing/invalid service_date
+129209,353329,25691,C81.2,J5502,1098.46,,['missing/invalid service_date'],missing/invalid service_date
+129221,407752,57563,J44.9,99203,-392.09,2023-10-25,['negative amount'],negative amount
+129223,72681,10623,I99.8,,480.09,2024-05-09,['missing procedure_code'],missing procedure_code
+129224,434965,72908,R66.5,,1279.09,2024-09-04,['missing procedure_code'],missing procedure_code
+129225,486147,18969,M63.4,99202,-47.61,2021-04-06,['negative amount'],negative amount
+129228,143698,18513,B12.9,99201,967.45,2026-05-06,['future service_date'],future service_date
+129231,41148,13764,Q79.0,99202,-105.81,2021-02-02,['negative amount'],negative amount
+129247,801252,69540,,,698.57,2023-03-31,['missing procedure_code'],missing procedure_code
+129249,474398,49103,Z95.3,99201,-118.31,2025-08-11,['negative amount'],negative amount
+129255,423878,1225,T01.2,J5502,957.19,2028-01-03,['future service_date'],future service_date
+129259,548013,85080,I55.1,99202,598.34,2026-05-14,['future service_date'],future service_date
+129271,272302,45159,S93.1,,2382.93,2022-01-13,['missing procedure_code'],missing procedure_code
+129273,157659,86166,P70.7,J5502,-623.46,2023-06-05,['negative amount'],negative amount
+129276,710984,29862,T36.8,,-607.11,2023-11-22,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+129280,244738,58691,G08.1,,325.56,2025-02-13,['missing procedure_code'],missing procedure_code
+129291,542992,92851,A35.3,99203,739.56,,['missing/invalid service_date'],missing/invalid service_date
+129296,826441,97037,T45.7,,1753.0,2021-06-08,['missing procedure_code'],missing procedure_code
+129298,561415,23715,S31.2,,1638.7,2023-03-25,['missing procedure_code'],missing procedure_code
+129310,781493,34351,D45.5,99202,1239.42,2028-01-29,['future service_date'],future service_date
+129313,949893,98751,H21.7,,2380.74,2024-03-24,['missing procedure_code'],missing procedure_code
+129314,190303,80832,Z89.8,99203,-127.69,2025-04-25,['negative amount'],negative amount
+129316,621621,81473,L03.9,99201,107.4,2026-05-04,['future service_date'],future service_date
+129320,414652,82236,T69.7,ABC12,-632.98,2024-07-10,['negative amount'],negative amount
+129322,344885,64734,K97.3,99203,-698.12,2022-10-02,['negative amount'],negative amount
+129327,699402,34948,S70.7,,1841.88,2026-01-02,['missing procedure_code'],missing procedure_code
+129330,169466,19396,D80.3,99203,1531.2,,['missing/invalid service_date'],missing/invalid service_date
+129346,947147,69359,J41.1,,1349.72,2021-05-13,['missing procedure_code'],missing procedure_code
+129350,345771,71298,Q17.8,99202,1798.04,,['missing/invalid service_date'],missing/invalid service_date
+129353,302006,14631,G19.6,,1871.47,2023-02-11,['missing procedure_code'],missing procedure_code
+129354,129390,20758,I08.2,99202,827.04,2027-04-29,['future service_date'],future service_date
+129367,579233,70177,I70.4,99203,-482.2,2024-06-13,['negative amount'],negative amount
+129371,543433,70478,A43.5,99201,-260.28,2023-06-20,['negative amount'],negative amount
+129377,855264,72309,F84.3,,1790.22,2025-09-20,['missing procedure_code'],missing procedure_code
+129380,337750,85341,,,914.15,2025-03-14,['missing procedure_code'],missing procedure_code
+129385,480245,26521,B79.1,99203,911.43,2026-10-29,['future service_date'],future service_date
+129388,345438,19646,N34.7,,1847.36,2023-10-01,['missing procedure_code'],missing procedure_code
+129390,129538,49752,H10.9,J5502,-54.07,2026-01-10,['negative amount'],negative amount
+129391,410297,71753,K04.5,,2039.5,2023-06-21,['missing procedure_code'],missing procedure_code
+129392,692007,27194,C57.8,,2032.69,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+129398,906699,46558,Q45.3,,2441.57,2022-01-05,['missing procedure_code'],missing procedure_code
+129403,898675,68471,C12.3,,343.81,2023-10-16,['missing procedure_code'],missing procedure_code
+129406,964521,43261,Z80.4,,1969.84,2022-04-05,['missing procedure_code'],missing procedure_code
+129407,751307,22028,I63.0,,1127.56,2021-07-27,['missing procedure_code'],missing procedure_code
+129407,586800,54937,G23.2,99201,-424.67,2022-02-08,['negative amount'],negative amount
+129408,47100,45136,P39.9,,1241.46,2026-02-26,['missing procedure_code'],missing procedure_code
+129412,502933,14507,G47.1,,540.29,2025-12-05,['missing procedure_code'],missing procedure_code
+129415,286885,73691,Q90.0,99203,2056.89,,['missing/invalid service_date'],missing/invalid service_date
+129416,528007,40343,H53.0,99202,230.25,2026-05-22,['future service_date'],future service_date
+129420,465205,50095,I75.4,,606.41,2022-11-06,['missing procedure_code'],missing procedure_code
+129429,169518,88917,Z12.5,,1745.76,2021-07-20,['missing procedure_code'],missing procedure_code
+129435,4813,92172,Z69.6,J5502,1067.94,,['missing/invalid service_date'],missing/invalid service_date
+129438,34867,59825,S09.3,99203,348.19,,['missing/invalid service_date'],missing/invalid service_date
+129444,127619,28967,M43.6,99202,-546.59,2022-06-02,['negative amount'],negative amount
+129448,666033,75410,,99201,-444.58,2023-03-19,['negative amount'],negative amount
+129450,98511,14523,D95.1,99201,-617.37,2021-07-31,['negative amount'],negative amount
+129452,710202,67009,B94.7,J5502,-126.33,2023-10-09,['negative amount'],negative amount
+129453,80430,91462,R03.9,J5502,-325.16,2022-02-21,['negative amount'],negative amount
+129455,391482,76737,P21.5,J5502,-272.31,2022-12-29,['negative amount'],negative amount
+129469,859437,97322,T53.2,99201,-647.3,2023-11-28,['negative amount'],negative amount
+129476,338575,71216,D83.3,99201,931.68,,['missing/invalid service_date'],missing/invalid service_date
+129479,43436,5524,I87.0,99201,2292.03,2027-01-06,['future service_date'],future service_date
+129484,948611,8398,P48.4,99202,-373.04,2025-08-18,['negative amount'],negative amount
+129493,234425,91673,C40.4,,1429.28,2022-05-01,['missing procedure_code'],missing procedure_code
+129497,392432,55990,A63.6,,747.63,2022-01-12,['missing procedure_code'],missing procedure_code
+129499,181497,88442,K45.8,,860.67,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+129504,42919,11834,L42.8,00000,1441.31,2027-01-04,['future service_date'],future service_date
+129505,486098,8627,F37.3,99203,1483.04,2026-11-16,['future service_date'],future service_date
+129513,813723,85661,G16.0,J5502,2383.35,,['missing/invalid service_date'],missing/invalid service_date
+129521,921499,62876,Z54.8,99203,-710.19,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+129523,612340,59850,G43.5,99203,-450.45,2023-01-15,['negative amount'],negative amount
+129528,227136,96846,A26.2,,1177.82,2026-01-03,['missing procedure_code'],missing procedure_code
+129534,489746,53691,L73.9,99201,1901.73,,['missing/invalid service_date'],missing/invalid service_date
+129535,427661,57597,M59.9,,1802.96,2024-09-17,['missing procedure_code'],missing procedure_code
+129544,882443,33753,Q59.1,,78.95,2022-11-17,['missing procedure_code'],missing procedure_code
+129561,9065,68997,Z42.6,99202,919.9,,['missing/invalid service_date'],missing/invalid service_date
+129569,626808,86592,B17.3,99202,-566.55,2025-12-01,['negative amount'],negative amount
+129580,256716,22004,K95.5,99202,1294.87,,['missing/invalid service_date'],missing/invalid service_date
+129591,626928,79003,P32.6,J5502,847.93,,['missing/invalid service_date'],missing/invalid service_date
+129602,17676,41712,Z15.5,99203,-254.86,2021-07-19,['negative amount'],negative amount
+129605,47605,70603,P33.4,99202,30.21,2027-07-31,['future service_date'],future service_date
+129609,858575,98762,P33.4,99202,-505.72,2021-04-02,['negative amount'],negative amount
+129620,735641,74914,,99201,-439.89,2021-12-08,['negative amount'],negative amount
+129631,870417,11975,N42.3,99201,-488.62,2022-04-02,['negative amount'],negative amount
+129635,310917,88582,N02.0,99202,1083.91,2026-09-22,['future service_date'],future service_date
+129637,815812,24941,G06.0,J5502,1042.99,2027-12-21,['future service_date'],future service_date
+129642,165031,25260,H73.7,99202,1856.09,2027-06-20,['future service_date'],future service_date
+129650,512662,1668,J59.6,99201,689.09,,['missing/invalid service_date'],missing/invalid service_date
+129664,885698,90581,N93.2,99202,840.87,,['missing/invalid service_date'],missing/invalid service_date
+129674,516643,38398,N54.8,99202,218.52,2027-09-12,['future service_date'],future service_date
+129690,846729,35326,C50.4,,1418.59,2022-05-03,['missing procedure_code'],missing procedure_code
+129691,758980,10100,T37.0,J5502,-350.62,2022-01-09,['negative amount'],negative amount
+129697,176404,79506,T90.1,99202,-575.44,2021-08-02,['negative amount'],negative amount
+129699,484951,44610,J29.3,J5502,520.19,2026-04-08,['future service_date'],future service_date
+129705,445798,70384,Z08.5,,1660.08,2022-06-29,['missing procedure_code'],missing procedure_code
+129709,774755,6943,T55.3,,606.94,2021-01-07,['missing procedure_code'],missing procedure_code
+129712,359499,64169,C25.4,99201,1449.59,2027-12-20,['future service_date'],future service_date
+129713,566687,1208,Z67.9,J5502,-723.19,2022-09-01,['negative amount'],negative amount
+129715,775770,42712,C61.9,,967.92,2025-07-06,['missing procedure_code'],missing procedure_code
+129717,591184,90161,R16.6,J5502,-558.84,2022-01-02,['negative amount'],negative amount
+129723,667395,79642,A22.1,J5502,435.29,,['missing/invalid service_date'],missing/invalid service_date
+129728,537583,52392,Z00.7,99201,-508.9,2025-11-15,['negative amount'],negative amount
+129734,659764,86726,G83.0,99203,-180.4,2024-08-25,['negative amount'],negative amount
+129734,911654,85854,H11.9,99201,2065.0,,['missing/invalid service_date'],missing/invalid service_date
+129736,144418,76880,H35.8,99201,296.21,,['missing/invalid service_date'],missing/invalid service_date
+129737,429637,59420,K52.4,,1165.14,2021-10-27,['missing procedure_code'],missing procedure_code
+129738,223520,90396,,J5502,-583.64,2022-04-21,['negative amount'],negative amount
+129740,582330,59844,A33.9,J5502,-263.89,2021-12-22,['negative amount'],negative amount
+129745,910891,1795,,99202,-470.34,2024-03-22,['negative amount'],negative amount
+129749,394472,89067,A39.9,,1277.72,2025-05-07,['missing procedure_code'],missing procedure_code
+129759,481230,84443,L94.8,,1694.63,2025-02-05,['missing procedure_code'],missing procedure_code
+129764,256105,51503,O89.1,99202,108.03,2027-09-15,['future service_date'],future service_date
+129765,899604,84091,N15.7,J5502,105.87,,['missing/invalid service_date'],missing/invalid service_date
+129773,141576,33697,J09.9,99201,720.96,2027-10-31,['future service_date'],future service_date
+129777,222447,87775,K85.3,99201,1859.9,2027-06-22,['future service_date'],future service_date
+129782,611819,90591,L79.0,99201,-237.99,2025-11-16,['negative amount'],negative amount
+129784,286195,74208,A07.8,99203,-255.58,2023-11-22,['negative amount'],negative amount
+129793,723288,3042,B89.5,,325.74,2026-03-25,['missing procedure_code'],missing procedure_code
+129799,490568,82668,,123,-528.33,2023-07-02,['negative amount'],negative amount
+129816,423016,98927,F38.8,99202,-204.67,2026-07-10,"['negative amount', 'future service_date']",negative amount; future service_date
+129821,715705,66564,B70.8,,1995.03,2024-05-16,['missing procedure_code'],missing procedure_code
+129822,199004,43076,O50.2,J5502,558.77,2026-07-02,['future service_date'],future service_date
+129825,216990,68843,G39.1,99202,-421.0,2025-07-27,['negative amount'],negative amount
+129826,469700,35557,F96.8,99203,332.11,,['missing/invalid service_date'],missing/invalid service_date
+129831,296815,71629,K84.0,,600.23,2022-09-22,['missing procedure_code'],missing procedure_code
+129832,408143,64273,T41.6,00000,199.34,,['missing/invalid service_date'],missing/invalid service_date
+129835,646612,48220,Z47.2,,2036.97,2026-05-12,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+129836,698221,54816,M61.4,,-103.89,,"['missing procedure_code', 'negative amount', 'missing/invalid service_date']",missing procedure_code; negative amount; missing/invalid service_date
+129838,558301,64434,S69.3,99202,69.77,,['missing/invalid service_date'],missing/invalid service_date
+129845,351889,77605,A14.0,99203,924.19,,['missing/invalid service_date'],missing/invalid service_date
+129848,492349,92755,O05.3,99203,1885.26,,['missing/invalid service_date'],missing/invalid service_date
+129850,255832,12809,T86.6,J5502,152.57,,['missing/invalid service_date'],missing/invalid service_date
+129854,508854,36790,Q42.8,99202,-271.39,2023-09-13,['negative amount'],negative amount
+129857,169434,42663,A93.5,ZZ999,1180.31,2026-10-31,['future service_date'],future service_date
+129859,744532,18250,N58.2,99203,-218.14,2022-03-09,['negative amount'],negative amount
+129866,158713,78954,P85.4,J5502,2006.12,,['missing/invalid service_date'],missing/invalid service_date
+129868,185372,98456,Q97.3,J5502,1486.58,,['missing/invalid service_date'],missing/invalid service_date
+129873,347364,47045,K41.1,99202,-615.95,2022-10-04,['negative amount'],negative amount
+129877,769975,11508,M87.3,99201,-565.46,2021-08-01,['negative amount'],negative amount
+129887,78790,73920,K58.9,99203,1194.75,,['missing/invalid service_date'],missing/invalid service_date
+129888,263350,19577,D55.5,,1692.19,2021-11-27,['missing procedure_code'],missing procedure_code
+129891,995844,86435,S04.2,99202,-162.48,2025-09-02,['negative amount'],negative amount
+129893,380353,9116,O32.1,,1792.54,2023-11-25,['missing procedure_code'],missing procedure_code
+129895,72276,93394,,99202,1604.6,,['missing/invalid service_date'],missing/invalid service_date
+129917,339370,32399,G75.4,,334.12,2025-02-22,['missing procedure_code'],missing procedure_code
+129918,134157,34347,M66.5,99201,-201.7,2022-01-04,['negative amount'],negative amount
+129924,577953,47959,A14.3,99202,447.52,2026-05-23,['future service_date'],future service_date
+129925,692992,46635,Q95.0,,1261.05,2027-05-08,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+129926,81931,71654,L83.2,J5502,1904.17,,['missing/invalid service_date'],missing/invalid service_date
+129927,715736,35830,L57.9,99201,-725.43,2025-12-23,['negative amount'],negative amount
+129929,242079,42226,Z17.7,99203,2247.55,2026-06-28,['future service_date'],future service_date
+129934,612936,72519,E08.7,,933.25,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+129942,607046,64949,E55.0,99203,1609.03,,['missing/invalid service_date'],missing/invalid service_date
+129950,858670,18805,M93.4,99203,-635.18,2022-09-18,['negative amount'],negative amount
+129951,728971,48055,R01.8,99203,511.14,,['missing/invalid service_date'],missing/invalid service_date
+129953,84855,1925,O11.3,J5502,172.59,2027-07-01,['future service_date'],future service_date
+129957,389029,80758,P17.5,J5502,-686.86,2023-05-24,['negative amount'],negative amount
+129964,391714,40530,,99202,-143.01,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+129982,352908,95620,E83.1,,2493.75,2026-03-07,['missing procedure_code'],missing procedure_code
+129989,410903,10401,Q84.5,J5502,415.85,2026-12-08,['future service_date'],future service_date
+129994,215334,63058,N83.3,,552.15,2022-07-18,['missing procedure_code'],missing procedure_code
+129995,617653,15505,J78.1,,143.18,2021-05-23,['missing procedure_code'],missing procedure_code
+129998,155943,51704,B74.6,99203,-160.94,2024-03-29,['negative amount'],negative amount
+129999,530035,27513,R34.7,99203,461.16,,['missing/invalid service_date'],missing/invalid service_date
+130000,842463,70901,Q52.0,,417.72,2023-01-03,['missing procedure_code'],missing procedure_code
+130003,195973,59788,J43.4,99202,615.92,,['missing/invalid service_date'],missing/invalid service_date
+130004,650933,49796,J16.5,ABC12,-453.25,2023-01-31,['negative amount'],negative amount
+130014,524471,62517,N26.4,,-465.08,2023-05-02,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+130015,218979,28763,P58.6,99203,1198.91,,['missing/invalid service_date'],missing/invalid service_date
+130022,790975,21546,L50.6,99201,-285.72,2028-02-09,"['negative amount', 'future service_date']",negative amount; future service_date
+130030,869737,13314,M14.3,J5502,-554.13,2022-12-14,['negative amount'],negative amount
+130036,838252,57240,D86.5,99202,1035.68,,['missing/invalid service_date'],missing/invalid service_date
+130040,519763,77331,L87.9,,-417.02,2025-02-13,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+130042,542082,62778,,,1275.54,2024-07-18,['missing procedure_code'],missing procedure_code
+130045,329602,8576,M07.5,,1039.25,2024-05-19,['missing procedure_code'],missing procedure_code
+130046,286659,46093,C27.6,99203,1304.85,,['missing/invalid service_date'],missing/invalid service_date
+130049,277204,20969,A59.3,99203,1471.7,2027-11-29,['future service_date'],future service_date
+130055,301882,45188,N22.1,99203,-527.95,2025-03-03,['negative amount'],negative amount
+130056,241563,62507,G18.8,99201,393.0,,['missing/invalid service_date'],missing/invalid service_date
+130061,256982,79426,L50.8,99203,-591.62,2026-02-11,['negative amount'],negative amount
+130067,136497,91255,H97.8,,294.64,2024-11-09,['missing procedure_code'],missing procedure_code
+130070,371601,96314,Q18.7,00000,1022.22,2027-07-12,['future service_date'],future service_date
+130072,231432,54191,S92.9,99203,478.76,2028-01-14,['future service_date'],future service_date
+130076,524104,8820,K49.7,99203,2299.73,2027-05-09,['future service_date'],future service_date
+130077,894089,18245,T19.0,123,-425.96,2024-09-13,['negative amount'],negative amount
+130083,738390,783,G01.6,99201,1181.59,,['missing/invalid service_date'],missing/invalid service_date
+130091,517451,27585,S89.2,,1154.21,2024-12-25,['missing procedure_code'],missing procedure_code
+130097,672214,61472,P10.0,J5502,-296.61,2023-06-23,['negative amount'],negative amount
+130100,631205,96034,T46.4,,794.28,2024-02-03,['missing procedure_code'],missing procedure_code
+130101,585918,49970,G28.9,00000,-744.74,2021-09-11,['negative amount'],negative amount
+130103,934369,24289,Q23.9,99202,568.04,,['missing/invalid service_date'],missing/invalid service_date
+130104,947833,94792,N50.1,,557.59,2023-01-18,['missing procedure_code'],missing procedure_code
+130108,397677,3768,E04.4,,2090.15,2024-07-14,['missing procedure_code'],missing procedure_code
+130109,444288,15747,H25.4,,1775.6,2023-03-30,['missing procedure_code'],missing procedure_code
+130114,404775,41814,N77.6,,1566.14,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+130115,64254,58749,A95.0,99203,247.65,2027-02-14,['future service_date'],future service_date
+130116,716220,54235,F62.6,99202,-238.16,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+130121,389019,22611,D47.5,,1674.64,2026-03-22,['missing procedure_code'],missing procedure_code
+130139,730394,84210,L87.5,99203,562.55,2027-06-30,['future service_date'],future service_date
+130144,429683,57243,P50.1,J5502,1731.53,,['missing/invalid service_date'],missing/invalid service_date
+130164,261060,51238,,,-599.57,2024-08-19,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+130168,928078,26516,S63.8,99201,-2.4,2023-12-14,['negative amount'],negative amount
+130181,115982,75417,J15.2,J55A2,-513.6,2022-09-17,['negative amount'],negative amount
+130187,223827,55592,F55.8,,291.2,2024-12-16,['missing procedure_code'],missing procedure_code
+130188,994669,47419,E50.1,99202,-568.82,2025-03-21,['negative amount'],negative amount
+130192,170659,22593,D33.8,99201,2118.33,2027-05-19,['future service_date'],future service_date
+130193,841374,13797,B03.2,,2188.26,2024-07-17,['missing procedure_code'],missing procedure_code
+130197,310271,10178,K33.5,99201,1870.97,,['missing/invalid service_date'],missing/invalid service_date
+130200,425202,76329,P65.6,99203,-725.3,2021-08-12,['negative amount'],negative amount
+130203,389887,21664,R35.4,99203,-622.27,2024-03-12,['negative amount'],negative amount
+130207,442454,17246,P36.4,99203,-627.33,2023-12-29,['negative amount'],negative amount
+130213,527632,94142,O98.9,,860.55,2025-08-15,['missing procedure_code'],missing procedure_code
+130215,394524,11388,L94.4,,60.56,2026-03-18,['missing procedure_code'],missing procedure_code
+130219,545190,84503,B85.0,99203,958.71,2026-07-09,['future service_date'],future service_date
+130221,592617,61846,A33.6,99202,209.3,2028-02-01,['future service_date'],future service_date
+130223,998969,77983,,00000,1775.12,,['missing/invalid service_date'],missing/invalid service_date
+130225,416710,55602,R88.8,99202,-212.48,2023-05-12,['negative amount'],negative amount
+130230,443960,94060,E99.1,99201,-577.42,2021-09-01,['negative amount'],negative amount
+130233,897542,95003,D98.1,,318.55,2024-01-01,['missing procedure_code'],missing procedure_code
+130235,786958,81573,E02.0,99203,-142.05,2023-08-14,['negative amount'],negative amount
+130239,954310,85153,F72.5,99202,-609.11,2021-10-10,['negative amount'],negative amount
+130251,494146,32776,J55.4,99203,-280.26,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+130255,598621,94831,L33.6,,2453.11,2023-06-17,['missing procedure_code'],missing procedure_code
+130260,146634,32424,Z34.7,99203,1151.8,2026-09-05,['future service_date'],future service_date
+130264,252919,67525,G71.8,99201,-135.92,2026-02-22,['negative amount'],negative amount
+130268,929059,63680,P34.2,J5502,2333.76,,['missing/invalid service_date'],missing/invalid service_date
+130282,85676,8696,G71.6,,398.39,2026-02-04,['missing procedure_code'],missing procedure_code
+130286,573339,11789,Q68.7,99203,-456.86,2023-06-03,['negative amount'],negative amount
+130287,311564,94878,T26.2,J5502,1420.86,2026-08-02,['future service_date'],future service_date
+130306,605260,44853,G67.2,00000,1123.3,2027-11-22,['future service_date'],future service_date
+130307,973535,17893,M94.6,99202,-558.68,2024-03-07,['negative amount'],negative amount
+130308,484474,89680,L00.5,PROCX,-39.33,2021-09-08,['negative amount'],negative amount
+130315,237185,73816,F97.7,J5502,90.94,,['missing/invalid service_date'],missing/invalid service_date
+130324,898596,57165,R97.1,,566.66,2024-07-10,['missing procedure_code'],missing procedure_code
+130327,3918,84667,E82.9,99202,1764.44,,['missing/invalid service_date'],missing/invalid service_date
+130328,679815,79750,E20.3,,2331.1,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+130330,797115,18001,P22.7,J5502,-585.53,2023-04-23,['negative amount'],negative amount
+130332,318329,49762,O85.2,99201,-729.77,2024-10-28,['negative amount'],negative amount
+130336,185034,19511,I96.1,,1047.23,2021-10-26,['missing procedure_code'],missing procedure_code
+130340,523212,35145,Z12.6,,451.03,2022-08-06,['missing procedure_code'],missing procedure_code
+130341,898961,88896,M67.8,J5502,-460.07,2022-03-06,['negative amount'],negative amount
+130348,387791,92749,D53.4,,176.97,2021-11-29,['missing procedure_code'],missing procedure_code
+130352,645070,73598,K82.0,,2120.34,2023-04-28,['missing procedure_code'],missing procedure_code
+130358,420085,38775,,J5502,-733.96,2023-02-02,['negative amount'],negative amount
+130360,918679,6512,O23.4,99202,-629.23,2022-08-29,['negative amount'],negative amount
+130362,874097,3045,F18.9,99203,-320.88,2025-08-27,['negative amount'],negative amount
+130364,360273,52353,L98.4,,2099.22,2023-04-14,['missing procedure_code'],missing procedure_code
+130366,758491,30645,N20.6,99202,-645.23,2026-02-12,['negative amount'],negative amount
+130370,138288,95233,Q39.8,J5502,-255.0,2021-09-18,['negative amount'],negative amount
+130372,494391,11185,N08.7,99202,-381.85,2021-05-29,['negative amount'],negative amount
+130378,29917,39071,B27.6,99201,-18.5,2021-10-29,['negative amount'],negative amount
+130380,221133,40191,T16.4,99201,-102.24,2022-08-20,['negative amount'],negative amount
+130381,185706,51430,A30.5,99202,-345.43,2023-11-23,['negative amount'],negative amount
+130399,319166,33411,P53.3,,-154.78,2025-10-04,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+130406,365686,63219,O16.8,99203,2424.88,,['missing/invalid service_date'],missing/invalid service_date
+130410,434086,68062,H70.5,J5502,-536.3,2026-03-14,['negative amount'],negative amount
+130414,799360,74338,P67.2,J5502,1633.4,,['missing/invalid service_date'],missing/invalid service_date
+130416,658509,45653,L97.1,ABC12,461.86,2027-11-16,['future service_date'],future service_date
+130417,453331,79355,Q61.1,,2145.41,2024-04-24,['missing procedure_code'],missing procedure_code
+130418,383407,53544,M85.0,99203,-306.45,2021-12-02,['negative amount'],negative amount
+130425,787914,30209,Q10.1,99201,403.15,2026-10-14,['future service_date'],future service_date
+130429,608578,30020,R85.0,,1982.38,2023-01-01,['missing procedure_code'],missing procedure_code
+130431,862092,48483,F82.1,99203,-74.99,2024-11-11,['negative amount'],negative amount
+130434,801723,93531,L30.2,,-409.0,2023-05-17,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+130435,672934,93520,N78.5,99201,1564.05,2027-02-08,['future service_date'],future service_date
+130438,86958,94832,I10.3,,632.41,2025-03-03,['missing procedure_code'],missing procedure_code
+130440,775371,1373,T02.2,ABC12,2205.98,,['missing/invalid service_date'],missing/invalid service_date
+130447,159774,5565,B26.5,J5502,2208.76,2027-04-23,['future service_date'],future service_date
+130448,226536,90105,M04.3,,405.5,2025-03-16,['missing procedure_code'],missing procedure_code
+130454,880431,35055,B87.2,99203,127.51,,['missing/invalid service_date'],missing/invalid service_date
+130455,378577,30921,O82.0,99202,1230.46,2027-04-04,['future service_date'],future service_date
+130458,901859,11346,L93.3,,2020.55,2024-02-06,['missing procedure_code'],missing procedure_code
+130461,645337,65388,A05.2,,-412.09,2024-09-26,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+130463,648872,5197,O68.6,99202,2134.95,2027-05-27,['future service_date'],future service_date
+130464,305896,34114,E49.1,99202,-611.28,2025-09-18,['negative amount'],negative amount
+130468,628664,54830,N37.1,,-400.22,2021-05-24,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+130476,3381,426,R35.3,,1016.98,2023-12-18,['missing procedure_code'],missing procedure_code
+130487,270190,52989,K54.7,,-164.34,2025-04-17,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+130491,327048,62914,C01.3,99202,114.94,2026-08-23,['future service_date'],future service_date
+130494,703996,4965,B37.4,99203,440.22,,['missing/invalid service_date'],missing/invalid service_date
+130497,746506,47919,S53.7,99203,-644.42,2025-11-28,['negative amount'],negative amount
+130498,547272,26425,,99202,536.17,,['missing/invalid service_date'],missing/invalid service_date
+130510,343143,60049,P64.6,,2204.66,2021-04-23,['missing procedure_code'],missing procedure_code
+130521,296783,50251,Z38.8,99202,792.13,,['missing/invalid service_date'],missing/invalid service_date
+130522,64163,83848,Z99.8,99203,-116.45,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+130533,822486,83573,M44.3,99202,1134.42,2027-10-19,['future service_date'],future service_date
+130540,628943,22731,,,1768.21,2024-11-30,['missing procedure_code'],missing procedure_code
+130541,278462,29627,C18.9,99201,2114.22,,['missing/invalid service_date'],missing/invalid service_date
+130545,582672,53418,T99.8,,482.81,2023-02-08,['missing procedure_code'],missing procedure_code
+130546,615379,25854,M23.5,99201,786.97,,['missing/invalid service_date'],missing/invalid service_date
+130553,546077,67079,R68.3,J5502,-296.56,2026-05-13,"['negative amount', 'future service_date']",negative amount; future service_date
+130560,292845,34814,H73.3,J5502,-716.52,2021-06-20,['negative amount'],negative amount
+130562,713191,81723,F67.6,J5502,-18.22,2021-10-27,['negative amount'],negative amount
+130563,950033,29224,E45.3,99201,-680.1,2024-08-13,['negative amount'],negative amount
+130573,630266,28494,F32.2,J5502,-487.76,2024-06-12,['negative amount'],negative amount
+130585,131517,9778,Q83.4,99201,1983.81,,['missing/invalid service_date'],missing/invalid service_date
+130587,382996,23088,G95.5,,1006.9,2024-06-25,['missing procedure_code'],missing procedure_code
+130589,123411,42178,O09.4,99202,-392.14,2026-02-26,['negative amount'],negative amount
+130590,45096,47755,E01.0,99203,-108.43,2022-09-11,['negative amount'],negative amount
+130597,704610,30250,G53.1,99202,-57.04,2025-05-12,['negative amount'],negative amount
+130602,450135,8759,A53.0,J5502,1454.69,2027-03-09,['future service_date'],future service_date
+130604,566824,65925,,,215.66,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+130605,337546,2658,H26.2,99203,1425.79,,['missing/invalid service_date'],missing/invalid service_date
+130607,283668,37543,G34.9,,2089.29,2026-03-27,['missing procedure_code'],missing procedure_code
+130608,932637,1275,M41.7,J5502,1203.36,,['missing/invalid service_date'],missing/invalid service_date
+130611,747951,20073,C57.0,99203,-635.62,2023-05-13,['negative amount'],negative amount
+130615,318891,57568,L91.5,99201,-341.21,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+130616,814187,82337,M20.2,J5502,-386.7,2023-07-08,['negative amount'],negative amount
+130623,949310,6612,C92.8,,798.86,2021-09-08,['missing procedure_code'],missing procedure_code
+130636,733648,10269,E41.2,99203,873.15,,['missing/invalid service_date'],missing/invalid service_date
+130637,923943,25994,M45.8,,462.97,2024-08-05,['missing procedure_code'],missing procedure_code
+130644,45620,19198,Z47.7,99201,2160.11,2028-01-19,['future service_date'],future service_date
+130645,770736,72557,G48.0,99201,-704.83,2024-10-20,['negative amount'],negative amount
+130651,866023,71302,I97.1,,1219.1,2025-11-09,['missing procedure_code'],missing procedure_code
+130654,535012,28935,S21.7,J5502,1032.48,,['missing/invalid service_date'],missing/invalid service_date
+130656,459834,90381,J35.4,,536.35,2027-08-06,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+130657,942156,54639,R72.6,J55A2,2437.09,2028-01-27,['future service_date'],future service_date
+130660,694510,17824,T18.2,,177.77,2027-10-26,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+130663,689105,55460,L12.4,99202,-709.09,2023-09-11,['negative amount'],negative amount
+130667,468079,9652,,,466.96,2024-03-13,['missing procedure_code'],missing procedure_code
+130669,633085,10783,B40.9,J5502,-430.7,2022-08-09,['negative amount'],negative amount
+130674,593733,95721,Z07.4,99201,2001.41,2027-01-02,['future service_date'],future service_date
+130676,532337,14133,,,247.86,2026-03-22,['missing procedure_code'],missing procedure_code
+130682,15224,36712,J67.1,,565.34,2025-04-06,['missing procedure_code'],missing procedure_code
+130687,479399,824,K13.0,99201,-251.37,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+130689,310911,39557,G18.1,,255.07,2023-05-17,['missing procedure_code'],missing procedure_code
+130698,346424,2600,E65.1,99203,-493.53,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+130699,33792,93893,G47.8,99203,2228.43,,['missing/invalid service_date'],missing/invalid service_date
+130701,337970,1843,A99.9,J5502,1860.33,2027-04-12,['future service_date'],future service_date
+130708,35772,54658,C98.5,99202,244.25,,['missing/invalid service_date'],missing/invalid service_date
+130714,530049,76472,Q16.2,,318.18,2024-05-21,['missing procedure_code'],missing procedure_code
+130722,210358,31280,O80.2,,80.77,2025-10-24,['missing procedure_code'],missing procedure_code
+130726,383626,5983,D29.0,,1583.49,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+130739,54768,19770,I34.0,J5502,1801.37,2026-11-30,['future service_date'],future service_date
+130741,758659,43038,J96.2,,966.94,2024-10-04,['missing procedure_code'],missing procedure_code
+130751,46291,71698,O34.9,,1237.52,2022-03-09,['missing procedure_code'],missing procedure_code
+130757,315030,26335,C27.0,99203,1171.1,,['missing/invalid service_date'],missing/invalid service_date
+130763,871046,16745,M48.4,99203,-273.88,2023-02-27,['negative amount'],negative amount
+130773,855250,46510,A41.4,,2211.74,2025-08-06,['missing procedure_code'],missing procedure_code
+130781,8533,68488,K70.1,,156.33,2023-08-27,['missing procedure_code'],missing procedure_code
+130782,419584,93282,Q02.6,,1945.65,2025-09-05,['missing procedure_code'],missing procedure_code
+130785,842363,41848,,99203,-100.8,2021-09-09,['negative amount'],negative amount
+130788,263894,83246,E13.1,,598.26,2025-12-15,['missing procedure_code'],missing procedure_code
+130789,829339,79046,F67.0,,2294.01,2025-06-24,['missing procedure_code'],missing procedure_code
+130799,17670,59647,A84.3,,1296.15,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+130807,331210,69483,,,1719.26,2022-07-22,['missing procedure_code'],missing procedure_code
+130809,626443,55598,I61.2,,436.89,2025-08-06,['missing procedure_code'],missing procedure_code
+130832,482904,27596,F06.0,J5502,1271.94,2026-09-15,['future service_date'],future service_date
+130836,124317,25158,P79.0,99201,2330.4,2027-07-09,['future service_date'],future service_date
+130843,730739,40603,I16.5,99203,831.76,2026-10-13,['future service_date'],future service_date
+130850,662643,53735,Z51.8,,1354.49,2021-01-25,['missing procedure_code'],missing procedure_code
+130852,673907,48089,L55.2,99203,-648.06,2025-07-25,['negative amount'],negative amount
+130856,514564,22997,E28.1,J55A2,1966.35,,['missing/invalid service_date'],missing/invalid service_date
+130857,966284,27561,M53.2,,1691.67,2021-05-21,['missing procedure_code'],missing procedure_code
+130859,52469,17807,,J5502,1478.09,2027-07-27,['future service_date'],future service_date
+130867,743107,65997,O10.5,,2001.24,2021-07-12,['missing procedure_code'],missing procedure_code
+130881,231007,96465,O51.8,99203,-684.41,2023-09-16,['negative amount'],negative amount
+130882,847643,91175,Z22.8,99202,1483.57,,['missing/invalid service_date'],missing/invalid service_date
+130885,352616,90324,,J5502,-349.29,2024-05-27,['negative amount'],negative amount
+130889,435250,96686,L23.9,99202,276.36,2027-01-05,['future service_date'],future service_date
+130890,245300,81375,I15.8,,224.94,2026-01-20,['missing procedure_code'],missing procedure_code
+130891,703290,81369,Q81.0,J5502,-25.75,2021-04-26,['negative amount'],negative amount
+130900,133020,55871,K85.3,J5502,2133.88,2026-12-25,['future service_date'],future service_date
+130902,412715,58409,I50.3,,105.26,2021-08-26,['missing procedure_code'],missing procedure_code
+130908,388203,64842,K45.3,99203,152.53,2027-09-28,['future service_date'],future service_date
+130910,433411,33232,B59.3,99202,309.78,,['missing/invalid service_date'],missing/invalid service_date
+130911,155132,4047,N10.0,J5502,-397.64,2024-11-23,['negative amount'],negative amount
+130915,173522,36735,M81.9,99203,1437.62,,['missing/invalid service_date'],missing/invalid service_date
+130922,31443,98019,H25.4,,1534.78,2025-12-22,['missing procedure_code'],missing procedure_code
+130926,393253,81016,P05.9,99202,-343.53,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+130927,11277,92527,,,2092.46,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+130936,16575,32370,L96.7,,530.93,2023-05-16,['missing procedure_code'],missing procedure_code
+130944,587997,37986,O75.5,99203,1882.95,,['missing/invalid service_date'],missing/invalid service_date
+130946,153537,29202,S54.3,99202,-235.83,2023-09-18,['negative amount'],negative amount
+130951,948527,43723,L12.4,99201,878.7,2026-07-01,['future service_date'],future service_date
+130953,711449,78761,A18.1,J5502,1982.31,,['missing/invalid service_date'],missing/invalid service_date
+130955,694446,51268,Z92.2,99202,1528.01,,['missing/invalid service_date'],missing/invalid service_date
+130956,320782,67153,A60.7,99201,366.26,,['missing/invalid service_date'],missing/invalid service_date
+130959,311541,7174,S08.3,,2328.77,2026-02-19,['missing procedure_code'],missing procedure_code
+130960,115616,11105,D09.0,99202,-426.93,2025-12-17,['negative amount'],negative amount
+130963,596498,73829,R80.0,,1740.22,2023-02-23,['missing procedure_code'],missing procedure_code
+130964,205832,20718,F32.4,J5502,-170.86,2022-12-08,['negative amount'],negative amount
+130965,956408,18418,P65.3,,1039.79,2026-02-13,['missing procedure_code'],missing procedure_code
+130970,489778,73368,I13.5,,1135.24,2023-09-24,['missing procedure_code'],missing procedure_code
+130974,234618,5432,I35.9,99201,1377.48,,['missing/invalid service_date'],missing/invalid service_date
+130975,100890,53234,E73.9,J5502,1722.23,,['missing/invalid service_date'],missing/invalid service_date
+130979,275895,38286,E27.9,99201,1051.69,,['missing/invalid service_date'],missing/invalid service_date
+130983,660473,14826,G24.5,99202,-266.68,2025-07-29,['negative amount'],negative amount
+130984,159041,42931,M71.4,99201,-214.9,2022-06-17,['negative amount'],negative amount
+130988,614220,33138,F59.6,99202,-140.5,2021-10-12,['negative amount'],negative amount
+130996,550839,81459,Z37.3,,453.88,2023-07-13,['missing procedure_code'],missing procedure_code
+130998,302699,57012,R02.9,,-448.51,2022-10-27,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+131010,28474,36051,S08.9,99203,867.13,,['missing/invalid service_date'],missing/invalid service_date
+131011,996646,81116,O38.1,99202,-620.83,2025-02-12,['negative amount'],negative amount
+131016,151399,77097,E83.5,J5502,-489.23,2021-06-24,['negative amount'],negative amount
+131019,868261,19115,B08.8,,1407.25,2022-04-01,['missing procedure_code'],missing procedure_code
+131023,973827,88566,G20.6,J55A2,990.93,2027-03-18,['future service_date'],future service_date
+131024,732935,52573,B38.0,J5502,-86.05,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+131029,433586,72663,S54.5,99203,1907.65,,['missing/invalid service_date'],missing/invalid service_date
+131035,888173,59945,Z39.3,J5502,-128.67,2023-10-27,['negative amount'],negative amount
+131037,28461,85475,,99202,-83.18,2021-03-13,['negative amount'],negative amount
+131038,810186,87764,J64.5,00000,275.67,2027-09-15,['future service_date'],future service_date
+131040,111482,75394,T72.4,,1386.62,2025-10-25,['missing procedure_code'],missing procedure_code
+131041,182309,69779,D11.4,,544.76,2021-06-13,['missing procedure_code'],missing procedure_code
+131042,46577,49831,R37.3,,1615.57,2021-05-31,['missing procedure_code'],missing procedure_code
+131043,239922,68837,P27.7,,324.94,2024-05-13,['missing procedure_code'],missing procedure_code
+131045,448555,61342,O62.7,99203,1782.09,,['missing/invalid service_date'],missing/invalid service_date
+131057,598539,23315,B83.3,99202,-100.7,2022-04-26,['negative amount'],negative amount
+131060,263251,12430,E14.3,99202,614.67,2027-01-23,['future service_date'],future service_date
+131079,8827,27164,S73.2,99202,50.61,,['missing/invalid service_date'],missing/invalid service_date
+131081,498762,95444,P16.5,J5502,2147.45,,['missing/invalid service_date'],missing/invalid service_date
+131084,408841,64400,A49.7,99201,-354.97,2024-04-30,['negative amount'],negative amount
+131085,864404,31666,B23.5,J5502,654.11,,['missing/invalid service_date'],missing/invalid service_date
+131091,890778,93815,T81.1,,1119.86,2025-04-28,['missing procedure_code'],missing procedure_code
+131102,500645,53660,E41.4,J5502,2101.94,,['missing/invalid service_date'],missing/invalid service_date
+131106,396640,8257,F33.5,99203,-229.97,2023-08-04,['negative amount'],negative amount
+131111,856756,41637,F02.5,,1850.66,2024-11-14,['missing procedure_code'],missing procedure_code
+131112,877151,49918,C47.1,,1715.73,2024-02-17,['missing procedure_code'],missing procedure_code
+131134,908525,54632,,99201,-722.33,2023-04-10,['negative amount'],negative amount
+131135,91375,47109,H83.0,,301.97,2025-06-11,['missing procedure_code'],missing procedure_code
+131154,78282,18017,E34.9,J5502,-172.08,2021-04-02,['negative amount'],negative amount
+131161,596866,39245,G71.1,99201,316.52,,['missing/invalid service_date'],missing/invalid service_date
+131166,649737,24106,S93.3,,714.01,2024-08-13,['missing procedure_code'],missing procedure_code
+131167,348803,66527,P39.3,,793.56,2023-01-24,['missing procedure_code'],missing procedure_code
+131168,989433,65253,F87.2,,37.29,2024-11-20,['missing procedure_code'],missing procedure_code
+131172,969335,95659,D58.3,J5502,2108.21,,['missing/invalid service_date'],missing/invalid service_date
+131176,528608,19841,N58.9,,1767.59,2021-06-15,['missing procedure_code'],missing procedure_code
+131180,953120,23121,J67.9,ZZ999,-397.48,2023-04-30,['negative amount'],negative amount
+131185,523152,24518,Z11.2,99201,239.84,2027-02-04,['future service_date'],future service_date
+131188,123534,15795,L68.2,J5502,1566.09,2027-06-17,['future service_date'],future service_date
+131191,299035,92278,B27.1,,1742.03,2025-08-11,['missing procedure_code'],missing procedure_code
+131194,240650,467,P17.1,,-248.57,2023-05-01,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+131207,866957,49582,Q66.5,99201,-254.23,2022-04-16,['negative amount'],negative amount
+131209,304708,1112,F07.5,99203,-197.01,2025-08-08,['negative amount'],negative amount
+131224,53990,85246,F03.9,J5502,-80.11,2025-10-24,['negative amount'],negative amount
+131234,554984,55187,O49.3,,-370.86,2024-11-03,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+131235,564598,43858,G29.2,J5502,-168.24,2024-01-05,['negative amount'],negative amount
+131246,915211,31560,I82.4,J5502,1744.51,2026-07-19,['future service_date'],future service_date
+131250,72349,79486,M42.3,,395.12,2021-10-29,['missing procedure_code'],missing procedure_code
+131262,80416,69038,G04.4,,1042.93,2023-07-20,['missing procedure_code'],missing procedure_code
+131263,300048,30735,J54.0,99202,1364.95,2026-10-08,['future service_date'],future service_date
+131264,685926,9055,G03.3,J5502,374.96,2027-10-15,['future service_date'],future service_date
+131267,85245,30469,Z75.6,99202,2497.42,,['missing/invalid service_date'],missing/invalid service_date
+131270,26954,72971,S62.2,99201,869.72,2027-05-27,['future service_date'],future service_date
+131278,156004,48462,S42.1,J5502,1200.57,,['missing/invalid service_date'],missing/invalid service_date
+131290,460256,35346,K41.0,,2388.18,2023-07-19,['missing procedure_code'],missing procedure_code
+131291,375696,60728,F74.4,99201,2262.25,2027-06-03,['future service_date'],future service_date
+131295,869744,25770,H93.3,99203,-325.05,2023-03-17,['negative amount'],negative amount
+131296,337276,77136,L67.8,99201,-106.6,2022-09-29,['negative amount'],negative amount
+131303,70777,72310,T77.3,99201,1219.11,,['missing/invalid service_date'],missing/invalid service_date
+131309,313755,2678,I28.6,,27.56,2022-08-07,['missing procedure_code'],missing procedure_code
+131323,843457,63640,I91.3,,689.03,2024-02-16,['missing procedure_code'],missing procedure_code
+131333,471397,2140,,,1702.87,2024-06-28,['missing procedure_code'],missing procedure_code
+131337,439395,63423,L36.3,,1823.64,2024-10-20,['missing procedure_code'],missing procedure_code
+131352,738604,42515,Z15.9,99203,1488.89,2026-07-17,['future service_date'],future service_date
+131361,764941,28019,T99.9,,2036.59,2023-02-13,['missing procedure_code'],missing procedure_code
+131370,87158,23557,M14.2,,-636.6,2026-01-10,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+131380,372295,71495,,,1793.62,2024-04-01,['missing procedure_code'],missing procedure_code
+131384,338459,5141,F62.5,,1165.59,2022-04-24,['missing procedure_code'],missing procedure_code
+131386,629377,61084,L92.6,,148.81,2023-11-04,['missing procedure_code'],missing procedure_code
+131388,740676,48964,S10.8,,1058.02,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131392,618498,74186,O83.2,J5502,2027.25,,['missing/invalid service_date'],missing/invalid service_date
+131393,989098,60166,O56.1,99202,1312.13,,['missing/invalid service_date'],missing/invalid service_date
+131394,164746,83849,D38.8,99202,1998.15,2026-09-15,['future service_date'],future service_date
+131402,824535,31593,R50.3,99201,-78.6,2027-02-06,"['negative amount', 'future service_date']",negative amount; future service_date
+131405,433896,76759,N91.8,J5502,2220.9,,['missing/invalid service_date'],missing/invalid service_date
+131408,73325,46836,H97.3,,-493.77,2023-11-02,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+131413,280787,22606,Z57.5,,708.62,2023-04-22,['missing procedure_code'],missing procedure_code
+131416,98479,28592,J84.2,99201,1403.32,,['missing/invalid service_date'],missing/invalid service_date
+131420,752539,24328,K42.5,99203,1039.6,,['missing/invalid service_date'],missing/invalid service_date
+131422,835822,82556,F31.4,,270.95,2023-02-03,['missing procedure_code'],missing procedure_code
+131423,254412,61334,R87.6,99203,-424.04,2023-04-05,['negative amount'],negative amount
+131433,730600,27406,O44.2,123,1483.88,2027-10-18,['future service_date'],future service_date
+131436,476639,47197,O35.5,99201,-372.71,2021-05-17,['negative amount'],negative amount
+131439,939193,73256,D50.1,99201,1500.12,2027-08-17,['future service_date'],future service_date
+131443,766781,31086,N70.8,J5502,-36.86,2024-01-27,['negative amount'],negative amount
+131445,612906,40118,D28.9,99201,2214.8,2026-09-16,['future service_date'],future service_date
+131446,491348,56916,,J5502,-746.76,2021-07-24,['negative amount'],negative amount
+131451,780141,56714,D22.0,,2053.42,2022-11-01,['missing procedure_code'],missing procedure_code
+131452,617227,72465,I32.7,,1284.89,2023-05-07,['missing procedure_code'],missing procedure_code
+131463,190358,50566,A32.2,,188.51,2022-03-01,['missing procedure_code'],missing procedure_code
+131471,645807,55580,R24.3,99202,1628.92,,['missing/invalid service_date'],missing/invalid service_date
+131473,787500,91198,,J5502,-133.92,2021-06-21,['negative amount'],negative amount
+131475,713124,64458,E43.2,99203,1351.11,2027-09-15,['future service_date'],future service_date
+131476,935708,38466,T86.5,J5502,1412.63,2027-05-22,['future service_date'],future service_date
+131483,834561,95141,C13.3,99201,-276.98,2023-11-29,['negative amount'],negative amount
+131485,290960,11178,A92.3,,956.31,2025-04-16,['missing procedure_code'],missing procedure_code
+131491,997514,37303,T08.8,,2493.25,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131495,550178,9572,T01.1,,1109.82,2025-12-26,['missing procedure_code'],missing procedure_code
+131500,471574,19797,,,1638.3,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131501,926452,97608,K23.6,J55A2,861.86,,['missing/invalid service_date'],missing/invalid service_date
+131502,754202,81812,R42.2,99203,1393.19,,['missing/invalid service_date'],missing/invalid service_date
+131504,617188,39370,T16.4,99203,-40.03,2025-04-15,['negative amount'],negative amount
+131507,613640,53438,F44.0,99203,553.09,2026-08-02,['future service_date'],future service_date
+131510,864901,18938,S89.9,,-152.75,2023-04-01,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+131515,363041,21818,,,702.74,2026-03-12,['missing procedure_code'],missing procedure_code
+131533,862512,17826,J47.7,99202,-72.98,2022-11-13,['negative amount'],negative amount
+131539,650987,8422,R69.6,J5502,-580.12,2027-03-25,"['negative amount', 'future service_date']",negative amount; future service_date
+131554,477284,14119,A62.9,,1537.87,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131556,539238,58918,O77.0,,785.72,2022-08-08,['missing procedure_code'],missing procedure_code
+131559,517979,58212,M22.5,J5502,2177.61,2026-11-02,['future service_date'],future service_date
+131570,627156,54663,E89.1,99203,-194.77,2024-10-07,['negative amount'],negative amount
+131571,589179,27059,B60.0,,1213.96,2022-12-23,['missing procedure_code'],missing procedure_code
+131574,722398,87836,H77.2,,668.07,2026-03-17,['missing procedure_code'],missing procedure_code
+131579,376829,86371,J13.3,,804.0,2022-11-14,['missing procedure_code'],missing procedure_code
+131584,783350,23489,R20.4,ABC12,912.47,2026-11-28,['future service_date'],future service_date
+131587,442061,48307,A17.1,,1428.79,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131588,385897,22535,D47.7,,1088.31,2023-01-15,['missing procedure_code'],missing procedure_code
+131593,475867,39783,G72.4,99201,2047.54,2027-05-07,['future service_date'],future service_date
+131594,434026,89578,C43.9,,1012.4,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131623,268585,4534,T43.9,99201,2253.25,,['missing/invalid service_date'],missing/invalid service_date
+131635,190255,62169,H42.5,,1595.57,2024-08-21,['missing procedure_code'],missing procedure_code
+131639,318287,23786,S94.7,99203,1944.13,2027-05-29,['future service_date'],future service_date
+131640,656973,79458,J61.0,99203,2278.36,2027-01-11,['future service_date'],future service_date
+131643,139829,99145,F27.1,,1673.38,2022-04-18,['missing procedure_code'],missing procedure_code
+131650,980486,81312,T30.8,99202,1286.55,,['missing/invalid service_date'],missing/invalid service_date
+131664,942052,89742,J14.8,99202,1373.22,,['missing/invalid service_date'],missing/invalid service_date
+131665,955815,65666,T09.4,99203,2254.8,2026-09-28,['future service_date'],future service_date
+131668,376034,14667,K55.3,,2470.54,2024-08-23,['missing procedure_code'],missing procedure_code
+131669,909266,76481,K22.7,99202,732.18,2028-01-20,['future service_date'],future service_date
+131671,726466,30825,Z14.6,99202,1936.19,2026-06-06,['future service_date'],future service_date
+131675,601274,53969,L70.4,99203,-503.91,2026-03-03,['negative amount'],negative amount
+131679,871440,5267,E97.0,J5502,1338.26,2026-05-25,['future service_date'],future service_date
+131687,145883,68492,A08.7,,503.68,2025-04-22,['missing procedure_code'],missing procedure_code
+131690,488013,25151,K80.1,99202,1050.37,,['missing/invalid service_date'],missing/invalid service_date
+131692,89598,13433,R85.2,J5502,-74.45,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+131693,813654,28113,S49.1,99201,1401.02,2027-12-25,['future service_date'],future service_date
+131695,965345,93919,R50.4,99202,817.3,2026-06-22,['future service_date'],future service_date
+131696,682808,93613,E53.7,99203,-216.71,2021-07-15,['negative amount'],negative amount
+131699,667996,80671,A52.5,99201,-81.67,2026-06-15,"['negative amount', 'future service_date']",negative amount; future service_date
+131701,943533,57152,H93.9,J55A2,415.76,,['missing/invalid service_date'],missing/invalid service_date
+131705,437084,69417,G98.3,99203,2457.14,2027-12-03,['future service_date'],future service_date
+131707,363627,29745,M26.2,99203,-158.21,2024-11-19,['negative amount'],negative amount
+131710,639056,14425,P45.3,99202,2113.07,2027-07-19,['future service_date'],future service_date
+131713,600788,93132,T52.2,99202,2326.89,,['missing/invalid service_date'],missing/invalid service_date
+131731,785936,2077,M15.6,99202,-540.05,2025-07-15,['negative amount'],negative amount
+131737,170490,33671,J41.2,99203,443.0,2028-01-12,['future service_date'],future service_date
+131743,224624,51251,G60.1,,680.53,2021-10-01,['missing procedure_code'],missing procedure_code
+131746,636646,87053,P53.1,J5502,-355.63,2025-07-16,['negative amount'],negative amount
+131747,544509,60374,L74.7,99202,189.86,,['missing/invalid service_date'],missing/invalid service_date
+131766,552676,56214,S48.5,99203,-286.52,2021-06-03,['negative amount'],negative amount
+131769,893482,16350,C38.1,99202,625.36,,['missing/invalid service_date'],missing/invalid service_date
+131774,40609,4854,S37.5,,-742.4,2025-05-23,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+131786,122584,6262,F29.0,99202,1481.82,2027-06-28,['future service_date'],future service_date
+131797,361669,9555,T46.2,99203,1478.37,2026-11-25,['future service_date'],future service_date
+131800,730661,73065,P25.5,99203,-284.13,2025-08-06,['negative amount'],negative amount
+131811,476796,2505,R79.6,99201,1732.44,2027-08-01,['future service_date'],future service_date
+131813,981954,23594,R68.5,,1444.93,2024-09-18,['missing procedure_code'],missing procedure_code
+131814,335234,60419,G74.4,J5502,1743.36,2027-10-30,['future service_date'],future service_date
+131822,950861,32834,Z15.0,,1309.02,2026-03-23,['missing procedure_code'],missing procedure_code
+131826,66398,2103,N88.3,,371.9,2026-03-30,['missing procedure_code'],missing procedure_code
+131834,373358,65092,R35.1,99202,1951.53,,['missing/invalid service_date'],missing/invalid service_date
+131835,12674,60705,J94.6,J5502,656.08,,['missing/invalid service_date'],missing/invalid service_date
+131836,856612,73455,M31.9,,2305.78,2023-11-03,['missing procedure_code'],missing procedure_code
+131841,88515,93482,S30.5,,942.88,2021-01-30,['missing procedure_code'],missing procedure_code
+131842,350512,2900,Z32.4,99202,-282.6,2027-08-05,"['negative amount', 'future service_date']",negative amount; future service_date
+131846,462374,92461,,,2374.67,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131850,887297,27418,T77.3,,-105.32,2026-01-29,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+131852,855893,39543,G73.3,J5502,1602.94,,['missing/invalid service_date'],missing/invalid service_date
+131855,347600,83713,,,2433.22,2025-10-31,['missing procedure_code'],missing procedure_code
+131861,505827,54962,S91.2,,444.87,2024-06-09,['missing procedure_code'],missing procedure_code
+131864,497993,87200,N91.3,,1983.51,2023-11-09,['missing procedure_code'],missing procedure_code
+131865,627964,27162,L32.3,99201,185.57,,['missing/invalid service_date'],missing/invalid service_date
+131869,147911,92253,J36.9,J5502,-36.44,2023-11-02,['negative amount'],negative amount
+131878,943421,81393,,J5502,1671.15,,['missing/invalid service_date'],missing/invalid service_date
+131880,931520,66200,D33.7,,2405.87,2024-03-30,['missing procedure_code'],missing procedure_code
+131881,522487,83084,O96.4,00000,-506.82,2025-06-09,['negative amount'],negative amount
+131885,883179,13841,I70.2,,1239.9,2022-03-11,['missing procedure_code'],missing procedure_code
+131887,789952,45400,E20.2,99201,-195.67,2021-07-09,['negative amount'],negative amount
+131891,137244,87549,L65.4,,2010.11,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131901,978547,40497,H21.8,99202,-277.34,2025-03-19,['negative amount'],negative amount
+131902,615612,88435,Q53.8,99202,1810.23,,['missing/invalid service_date'],missing/invalid service_date
+131904,167746,48810,H91.4,,1399.64,2021-06-28,['missing procedure_code'],missing procedure_code
+131906,183187,41710,B11.7,99202,2479.37,,['missing/invalid service_date'],missing/invalid service_date
+131909,910480,77727,P10.6,99203,-376.88,2022-09-11,['negative amount'],negative amount
+131921,381661,74240,,99201,1546.45,2027-03-30,['future service_date'],future service_date
+131923,238719,74694,H86.9,99202,176.15,2026-10-11,['future service_date'],future service_date
+131924,848202,51323,N48.4,99203,137.55,,['missing/invalid service_date'],missing/invalid service_date
+131927,774355,33846,N44.5,99203,1413.63,,['missing/invalid service_date'],missing/invalid service_date
+131930,901871,23366,O55.9,,1435.48,2022-04-20,['missing procedure_code'],missing procedure_code
+131943,585440,73447,P44.7,99203,1768.32,,['missing/invalid service_date'],missing/invalid service_date
+131945,51739,41399,J40.6,00000,-330.23,2021-10-13,['negative amount'],negative amount
+131946,691058,24603,S99.9,,956.97,2023-09-26,['missing procedure_code'],missing procedure_code
+131956,916263,54943,J23.6,99202,-506.34,2027-08-08,"['negative amount', 'future service_date']",negative amount; future service_date
+131957,569448,2426,S54.8,99203,1868.55,,['missing/invalid service_date'],missing/invalid service_date
+131958,123256,54326,J51.9,99201,600.96,2026-07-16,['future service_date'],future service_date
+131959,753217,5013,Q24.5,J5502,34.03,2027-10-08,['future service_date'],future service_date
+131961,137159,30524,K00.5,99201,-614.46,2022-12-18,['negative amount'],negative amount
+131963,292038,97410,Z09.0,J5502,2273.37,2027-11-06,['future service_date'],future service_date
+131966,84575,77577,N90.1,,578.55,2022-01-09,['missing procedure_code'],missing procedure_code
+131970,376717,65316,E52.4,99203,2013.5,2026-09-30,['future service_date'],future service_date
+131971,182644,1158,G62.7,,1514.7,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+131975,817752,65331,P09.4,99202,2472.59,2027-12-13,['future service_date'],future service_date
+131976,905652,77523,E66.4,99202,2326.21,2027-07-16,['future service_date'],future service_date
+131977,381791,10217,K28.2,99202,-679.61,2023-04-08,['negative amount'],negative amount
+131978,83097,41546,C16.3,99202,552.31,2027-11-17,['future service_date'],future service_date
+131983,49233,99304,Q63.6,99201,811.5,,['missing/invalid service_date'],missing/invalid service_date
+131995,718770,11720,B84.8,J5502,-428.82,2024-05-25,['negative amount'],negative amount
+132001,883163,12466,N51.7,99203,471.2,2026-11-26,['future service_date'],future service_date
+132014,41018,42935,G54.2,J5502,1464.77,2027-08-08,['future service_date'],future service_date
+132018,711063,703,D44.3,99203,571.84,2027-05-26,['future service_date'],future service_date
+132025,198903,30484,N56.8,00000,-260.01,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+132031,600884,47902,D01.4,,1030.68,2023-07-20,['missing procedure_code'],missing procedure_code
+132033,899406,76619,A25.6,J5502,-233.68,2021-07-22,['negative amount'],negative amount
+132038,231104,49425,S42.6,99203,-280.53,2021-06-18,['negative amount'],negative amount
+132040,114178,5752,E99.8,,-460.23,2024-08-26,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+132045,182680,7547,Z17.0,00000,1845.38,2026-10-24,['future service_date'],future service_date
+132048,869191,47089,B70.2,99201,1453.31,,['missing/invalid service_date'],missing/invalid service_date
+132052,493835,40451,C53.2,J5502,870.4,2027-02-28,['future service_date'],future service_date
+132054,872669,31236,O13.1,J5502,1787.07,,['missing/invalid service_date'],missing/invalid service_date
+132061,204793,97623,I59.3,,1967.66,2021-12-30,['missing procedure_code'],missing procedure_code
+132065,649094,56524,C71.1,99202,2003.23,2027-06-03,['future service_date'],future service_date
+132069,14321,31730,F97.6,99203,-165.08,2024-03-10,['negative amount'],negative amount
+132070,388885,64457,G10.9,99203,-420.77,2024-09-27,['negative amount'],negative amount
+132079,483014,97217,I87.7,99201,425.54,2026-07-05,['future service_date'],future service_date
+132091,153984,58272,C76.3,99201,93.44,,['missing/invalid service_date'],missing/invalid service_date
+132092,836275,1912,H85.4,99201,1865.98,,['missing/invalid service_date'],missing/invalid service_date
+132098,405091,67720,H59.2,,1235.0,2024-06-17,['missing procedure_code'],missing procedure_code
+132100,83918,31570,G88.6,,307.98,2024-07-22,['missing procedure_code'],missing procedure_code
+132101,658883,78226,J87.3,123,2388.76,,['missing/invalid service_date'],missing/invalid service_date
+132103,219207,8358,,99201,-331.11,2022-04-12,['negative amount'],negative amount
+132107,442688,54842,G77.7,J5502,554.88,,['missing/invalid service_date'],missing/invalid service_date
+132107,306636,98112,P75.1,,-162.61,2022-09-16,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+132108,31293,95745,S97.5,99201,-726.16,2023-07-21,['negative amount'],negative amount
+132124,326918,50243,B63.2,99201,-534.43,2022-04-14,['negative amount'],negative amount
+132126,204129,78649,C45.4,J5502,321.13,2027-01-11,['future service_date'],future service_date
+132139,851715,47431,I65.1,,582.44,2023-11-23,['missing procedure_code'],missing procedure_code
+132145,156497,78111,I07.5,99201,-494.3,2024-07-11,['negative amount'],negative amount
+132147,201676,93258,J47.8,,1059.75,2022-02-22,['missing procedure_code'],missing procedure_code
+132156,436482,90914,I80.5,,837.09,2023-02-09,['missing procedure_code'],missing procedure_code
+132161,520814,12869,N68.9,J5502,420.6,,['missing/invalid service_date'],missing/invalid service_date
+132164,460754,9611,G01.8,99202,914.14,,['missing/invalid service_date'],missing/invalid service_date
+132167,959197,88139,I97.0,99203,199.14,2027-05-31,['future service_date'],future service_date
+132170,599686,14037,H37.7,99202,-145.93,2022-06-19,['negative amount'],negative amount
+132171,179089,44216,I76.6,99203,70.85,2027-05-02,['future service_date'],future service_date
+132180,955691,67220,G34.4,99201,-482.36,2023-05-10,['negative amount'],negative amount
+132184,308359,36126,S68.6,,1168.4,2025-02-07,['missing procedure_code'],missing procedure_code
+132188,729339,97703,S37.4,99202,2257.41,,['missing/invalid service_date'],missing/invalid service_date
+132194,681672,49514,N46.5,99202,2264.27,2026-11-03,['future service_date'],future service_date
+132197,861013,24306,Q41.9,99202,1269.03,,['missing/invalid service_date'],missing/invalid service_date
+132198,387076,21372,Z79.1,99201,816.22,,['missing/invalid service_date'],missing/invalid service_date
+132199,443950,2412,J24.5,99203,1335.9,,['missing/invalid service_date'],missing/invalid service_date
+132201,941078,94962,Z26.7,,829.31,2024-09-09,['missing procedure_code'],missing procedure_code
+132208,78464,98374,,,1900.73,2023-04-18,['missing procedure_code'],missing procedure_code
+132212,34637,58713,K18.1,J5502,1895.85,,['missing/invalid service_date'],missing/invalid service_date
+132221,777985,58383,P03.7,00000,-457.95,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+132238,233444,24187,S83.6,99201,417.62,,['missing/invalid service_date'],missing/invalid service_date
+132242,255220,96279,D92.1,123,2328.21,2026-09-23,['future service_date'],future service_date
+132246,523649,2999,E48.8,J5502,2283.18,,['missing/invalid service_date'],missing/invalid service_date
+132248,449799,15139,H67.4,J5502,-244.16,2021-02-20,['negative amount'],negative amount
+132262,961360,6836,O54.5,,124.56,2022-11-20,['missing procedure_code'],missing procedure_code
+132265,707284,68992,A35.0,99201,-61.71,2023-02-13,['negative amount'],negative amount
+132268,914102,21580,P43.3,99201,-177.45,2023-01-11,['negative amount'],negative amount
+132269,78899,78616,M92.9,99202,-486.91,2023-02-14,['negative amount'],negative amount
+132271,245954,3785,N50.8,99202,719.97,2026-05-21,['future service_date'],future service_date
+132274,493353,52312,A13.9,99201,1492.47,2027-11-14,['future service_date'],future service_date
+132283,811040,43128,Q99.2,,311.48,2023-03-08,['missing procedure_code'],missing procedure_code
+132283,660959,99107,E90.2,,799.94,2023-07-26,['missing procedure_code'],missing procedure_code
+132284,135689,20619,K18.8,ABC12,1705.39,2026-06-08,['future service_date'],future service_date
+132286,322314,89540,D85.1,J5502,-274.78,2023-11-23,['negative amount'],negative amount
+132287,239175,60217,B29.0,99201,-435.45,2023-08-04,['negative amount'],negative amount
+132290,578091,25711,A63.5,J5502,797.34,,['missing/invalid service_date'],missing/invalid service_date
+132291,457405,29289,E37.0,99203,-152.44,2022-03-19,['negative amount'],negative amount
+132310,617068,10181,I56.1,,1894.41,2021-05-07,['missing procedure_code'],missing procedure_code
+132316,951076,33473,C83.4,,1687.65,2025-12-24,['missing procedure_code'],missing procedure_code
+132318,498754,62972,Z61.0,,1257.92,2023-07-11,['missing procedure_code'],missing procedure_code
+132320,986693,64616,C08.0,,515.88,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+132322,647071,73105,Q51.6,J5502,-57.94,2021-02-14,['negative amount'],negative amount
+132329,233731,25660,,,2426.34,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+132334,923782,20159,D36.0,J5502,2214.07,,['missing/invalid service_date'],missing/invalid service_date
+132337,798836,74835,Z14.9,99202,114.1,2027-01-11,['future service_date'],future service_date
+132340,515109,80186,H61.3,,734.49,2022-04-06,['missing procedure_code'],missing procedure_code
+132341,341561,36694,I68.6,,1398.49,2025-04-04,['missing procedure_code'],missing procedure_code
+132342,771204,78903,E65.9,99201,-178.05,2023-12-13,['negative amount'],negative amount
+132353,786813,52578,J47.8,,111.34,2024-08-09,['missing procedure_code'],missing procedure_code
+132356,159965,39475,D21.7,99202,1557.89,2027-10-24,['future service_date'],future service_date
+132357,661286,93211,F83.1,99202,-733.84,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+132358,741365,72296,L86.8,J5502,-136.0,2023-09-12,['negative amount'],negative amount
+132360,134504,93964,E89.3,99201,-423.3,2027-04-24,"['negative amount', 'future service_date']",negative amount; future service_date
+132360,893989,57821,F46.6,J5502,2440.37,,['missing/invalid service_date'],missing/invalid service_date
+132365,585993,62836,,J5502,2477.3,,['missing/invalid service_date'],missing/invalid service_date
+132368,696738,87608,D79.5,J55A2,2391.08,,['missing/invalid service_date'],missing/invalid service_date
+132372,188492,20979,K36.6,99203,-423.14,2023-11-19,['negative amount'],negative amount
+132374,844841,8020,T97.2,J5502,354.81,2027-03-21,['future service_date'],future service_date
+132387,740869,43440,Z82.8,,1922.5,2023-12-18,['missing procedure_code'],missing procedure_code
+132390,636476,50901,Z30.3,J55A2,-494.91,2025-03-10,['negative amount'],negative amount
+132391,592438,40880,L63.9,99203,1947.44,,['missing/invalid service_date'],missing/invalid service_date
+132392,639481,97530,G45.8,99203,-325.25,2027-04-30,"['negative amount', 'future service_date']",negative amount; future service_date
+132394,655528,97143,H37.9,,-383.83,2023-09-28,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+132397,485153,70606,A71.9,J5502,1578.29,2027-01-18,['future service_date'],future service_date
+132401,350107,86070,T83.4,,274.07,2025-11-18,['missing procedure_code'],missing procedure_code
+132402,556644,23225,F63.0,99201,1464.91,,['missing/invalid service_date'],missing/invalid service_date
+132408,136296,51149,Q20.6,99202,2426.96,,['missing/invalid service_date'],missing/invalid service_date
+132411,405180,26763,F50.2,,2282.28,2023-04-27,['missing procedure_code'],missing procedure_code
+132413,139218,89509,E16.8,99202,2371.04,,['missing/invalid service_date'],missing/invalid service_date
+132416,609770,19937,J08.3,99203,-67.13,2026-01-20,['negative amount'],negative amount
+132417,158490,62029,B43.5,,1104.38,2023-06-21,['missing procedure_code'],missing procedure_code
+132420,458679,2267,C93.1,99202,-18.24,2022-10-14,['negative amount'],negative amount
+132454,900674,71933,O56.4,,388.46,2026-06-27,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+132464,730710,6070,C89.2,,-217.28,2022-06-10,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+132468,242228,3639,P54.0,99203,1771.91,2027-01-22,['future service_date'],future service_date
+132469,450251,25802,R63.2,99203,-708.66,2021-04-12,['negative amount'],negative amount
+132470,414180,54080,,99202,-216.6,2025-03-28,['negative amount'],negative amount
+132472,438133,91559,B25.7,99201,-211.22,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+132474,767814,45325,H98.6,99202,-442.18,2026-01-30,['negative amount'],negative amount
+132476,64934,4671,C80.1,99201,-231.6,2023-12-02,['negative amount'],negative amount
+132502,884480,98971,M56.4,,1338.53,2022-01-08,['missing procedure_code'],missing procedure_code
+132510,111969,95237,R72.7,99201,443.64,2027-02-11,['future service_date'],future service_date
+132512,898192,91477,N10.1,,1737.89,2024-12-19,['missing procedure_code'],missing procedure_code
+132513,883038,9168,S90.0,99203,-10.9,2023-09-04,['negative amount'],negative amount
+132514,379491,88745,,J5502,658.68,,['missing/invalid service_date'],missing/invalid service_date
+132521,943895,13837,E52.6,99201,590.37,2026-10-08,['future service_date'],future service_date
+132534,82128,12674,A41.0,99202,-114.03,2022-04-16,['negative amount'],negative amount
+132535,130648,18356,L43.7,99201,770.95,2026-11-26,['future service_date'],future service_date
+132540,683968,73011,K71.5,,1203.24,2024-01-10,['missing procedure_code'],missing procedure_code
+132545,348823,36982,E57.7,J5502,2065.94,,['missing/invalid service_date'],missing/invalid service_date
+132549,320511,23837,E96.1,,1131.32,2023-02-09,['missing procedure_code'],missing procedure_code
+132550,872146,20472,J62.8,,1557.99,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+132552,971836,26596,S74.3,J5502,-273.45,2024-10-08,['negative amount'],negative amount
+132554,332688,59202,M77.6,,471.9,2025-04-30,['missing procedure_code'],missing procedure_code
+132560,303854,41082,T64.7,99201,2054.43,2027-07-25,['future service_date'],future service_date
+132561,577939,62143,,99201,139.52,,['missing/invalid service_date'],missing/invalid service_date
+132567,337238,28575,D10.2,99203,2460.82,2028-02-26,['future service_date'],future service_date
+132569,967588,86929,J77.4,,739.81,2022-01-08,['missing procedure_code'],missing procedure_code
+132580,979705,4129,M16.8,99203,-500.64,2027-07-16,"['negative amount', 'future service_date']",negative amount; future service_date
+132582,96424,96445,A11.8,J5502,-514.37,2022-09-11,['negative amount'],negative amount
+132586,113724,93770,I64.9,99202,1510.72,,['missing/invalid service_date'],missing/invalid service_date
+132592,862618,72562,,,1653.73,2027-01-19,"['missing procedure_code', 'future service_date']",missing procedure_code; future service_date
+132594,659427,97204,Q71.5,99203,999.78,2026-11-24,['future service_date'],future service_date
+132597,527604,96472,C07.2,,1801.38,2022-04-30,['missing procedure_code'],missing procedure_code
+132599,593450,35439,D24.6,99201,-682.55,,"['negative amount', 'missing/invalid service_date']",negative amount; missing/invalid service_date
+132605,955948,33244,D32.4,,1890.2,2025-03-20,['missing procedure_code'],missing procedure_code
+132609,472939,44902,F41.5,99201,-164.83,2021-03-16,['negative amount'],negative amount
+132623,201857,57637,D19.8,99202,-658.6,2024-03-23,['negative amount'],negative amount
+132636,16079,99473,E14.2,ABC12,1163.72,2027-10-25,['future service_date'],future service_date
+132639,171364,97730,J26.9,,2456.59,2025-07-17,['missing procedure_code'],missing procedure_code
+132645,668642,7182,F22.0,99202,-369.3,2021-04-11,['negative amount'],negative amount
+132646,99287,57517,I44.3,99201,855.4,2027-01-22,['future service_date'],future service_date
+132652,463666,40182,D81.1,,1846.83,2021-08-28,['missing procedure_code'],missing procedure_code
+132654,113802,7869,T05.2,99203,-369.57,2021-07-01,['negative amount'],negative amount
+132666,639520,12921,D21.7,,2280.94,2021-10-09,['missing procedure_code'],missing procedure_code
+132672,938327,83654,J10.9,99201,-337.43,2024-02-24,['negative amount'],negative amount
+132675,133912,72156,C24.2,99203,733.56,,['missing/invalid service_date'],missing/invalid service_date
+132682,734144,62700,Z35.3,99202,1780.74,,['missing/invalid service_date'],missing/invalid service_date
+132690,865502,56247,N03.0,99202,2447.08,,['missing/invalid service_date'],missing/invalid service_date
+132698,156020,28868,N27.6,,41.03,2025-04-28,['missing procedure_code'],missing procedure_code
+132706,334875,71612,F10.0,,590.56,2024-07-12,['missing procedure_code'],missing procedure_code
+132716,782191,44260,O25.9,123,-114.02,2025-08-20,['negative amount'],negative amount
+132723,593262,59458,,ZZ999,1578.82,,['missing/invalid service_date'],missing/invalid service_date
+132732,356921,48874,C87.3,J5502,1697.44,,['missing/invalid service_date'],missing/invalid service_date
+132738,586638,96969,O74.4,,-154.52,2026-01-12,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+132739,704376,51394,,J5502,-192.94,2022-06-16,['negative amount'],negative amount
+132746,247337,33331,,J5502,-8.45,2022-02-08,['negative amount'],negative amount
+132752,148242,60487,G67.3,J5502,995.94,2026-12-03,['future service_date'],future service_date
+132758,586680,96119,C15.6,99202,-556.19,2021-08-27,['negative amount'],negative amount
+132759,91139,4343,H49.6,99202,1707.45,,['missing/invalid service_date'],missing/invalid service_date
+132772,552272,63356,G66.1,99202,1008.1,,['missing/invalid service_date'],missing/invalid service_date
+132773,31695,74934,K97.2,,747.33,2022-03-16,['missing procedure_code'],missing procedure_code
+132793,55960,23964,E89.2,,2139.5,2024-09-07,['missing procedure_code'],missing procedure_code
+132795,980830,79932,K22.9,99201,-709.5,2021-11-02,['negative amount'],negative amount
+132797,709987,73564,R57.1,,1383.48,2022-07-04,['missing procedure_code'],missing procedure_code
+132804,400160,93790,L63.7,,597.63,2024-11-20,['missing procedure_code'],missing procedure_code
+132807,30609,91159,T81.3,99201,-7.67,2022-06-02,['negative amount'],negative amount
+132820,410267,60280,P87.1,,369.41,2023-03-10,['missing procedure_code'],missing procedure_code
+132822,657731,43423,G25.8,J5502,509.77,2027-03-29,['future service_date'],future service_date
+132833,319483,95855,Q48.5,,750.65,2022-05-05,['missing procedure_code'],missing procedure_code
+132838,912780,84589,O02.1,,718.12,2023-03-22,['missing procedure_code'],missing procedure_code
+132842,110055,76592,J94.7,J5502,-416.62,2021-05-11,['negative amount'],negative amount
+132846,912887,804,J33.1,J5502,2338.14,,['missing/invalid service_date'],missing/invalid service_date
+132848,977998,2829,J87.6,99201,-537.81,2023-05-15,['negative amount'],negative amount
+132854,92812,16297,O17.5,99202,-94.33,2021-04-30,['negative amount'],negative amount
+132855,461915,39964,K81.0,99202,1483.96,,['missing/invalid service_date'],missing/invalid service_date
+132857,71902,57222,Z63.1,99201,-674.77,2025-02-09,['negative amount'],negative amount
+132862,847519,24766,P00.1,J5502,2361.9,,['missing/invalid service_date'],missing/invalid service_date
+132873,806237,41966,B78.2,,1173.97,2025-10-27,['missing procedure_code'],missing procedure_code
+132877,88688,14933,B39.7,99202,-137.99,2023-03-11,['negative amount'],negative amount
+132885,302022,7801,D90.6,ZZ999,2201.54,,['missing/invalid service_date'],missing/invalid service_date
+132886,335866,51330,A93.5,99202,1279.91,2027-04-15,['future service_date'],future service_date
+132889,562432,48550,K05.0,,706.6,2025-06-25,['missing procedure_code'],missing procedure_code
+132893,85496,94463,A36.6,99203,436.23,2026-08-01,['future service_date'],future service_date
+132896,21195,83670,J42.7,,2028.31,2025-07-27,['missing procedure_code'],missing procedure_code
+132899,694712,42207,A43.3,99202,1822.7,2026-04-27,['future service_date'],future service_date
+132903,78040,7004,P78.1,99202,-674.6,2024-03-15,['negative amount'],negative amount
+132904,192572,76617,A65.0,99202,367.0,2026-07-07,['future service_date'],future service_date
+132905,44347,88504,A28.5,99201,191.36,,['missing/invalid service_date'],missing/invalid service_date
+132913,747146,19672,O04.1,J5502,824.65,,['missing/invalid service_date'],missing/invalid service_date
+132914,292551,34916,G43.1,99202,-227.18,2025-11-14,['negative amount'],negative amount
+132916,44958,30915,R52.3,J5502,-124.23,2021-09-13,['negative amount'],negative amount
+132918,969890,34868,H60.0,99203,2390.55,2027-10-23,['future service_date'],future service_date
+132919,804491,99328,A29.5,J5502,360.13,,['missing/invalid service_date'],missing/invalid service_date
+132924,119114,3208,,99201,754.9,,['missing/invalid service_date'],missing/invalid service_date
+132927,560352,59445,R97.8,,201.75,2025-10-17,['missing procedure_code'],missing procedure_code
+132931,716248,69230,H80.5,ZZ999,1260.15,2026-11-22,['future service_date'],future service_date
+132936,484385,4592,J73.1,00000,1035.79,,['missing/invalid service_date'],missing/invalid service_date
+132948,74085,59630,K00.3,ABC12,1433.43,2027-11-21,['future service_date'],future service_date
+132957,246351,35223,K09.9,99202,-595.87,2021-03-02,['negative amount'],negative amount
+132958,838735,16499,P88.7,J5502,801.62,2026-11-04,['future service_date'],future service_date
+132963,161557,50487,G40.1,99202,-230.16,2021-08-30,['negative amount'],negative amount
+132966,843551,35614,R38.7,99203,470.74,,['missing/invalid service_date'],missing/invalid service_date
+132967,134735,78728,N52.2,99201,2303.09,2026-10-20,['future service_date'],future service_date
+132968,328612,65023,Q54.4,99202,642.69,2027-01-18,['future service_date'],future service_date
+132972,33674,22038,M06.8,PROCX,2055.4,2028-02-29,['future service_date'],future service_date
+132976,724436,2288,P34.6,99203,1561.49,,['missing/invalid service_date'],missing/invalid service_date
+132977,671536,84877,P10.8,,1601.8,2022-09-30,['missing procedure_code'],missing procedure_code
+132978,877344,68309,B95.3,99202,2068.05,2026-06-21,['future service_date'],future service_date
+132982,892877,32628,P53.4,99203,-647.41,2025-07-19,['negative amount'],negative amount
+132989,700377,70882,O65.9,J5502,1783.91,2027-10-22,['future service_date'],future service_date
+132992,162104,42768,F36.2,99201,1914.87,,['missing/invalid service_date'],missing/invalid service_date
+132993,689592,36031,K34.7,,-571.53,2024-01-05,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+132998,684005,69599,O35.2,99202,-117.84,2025-10-12,['negative amount'],negative amount
+133005,594999,52688,S83.6,,301.68,2023-02-04,['missing procedure_code'],missing procedure_code
+133015,368359,56926,S40.8,99202,503.09,2027-10-08,['future service_date'],future service_date
+133016,151339,33564,O43.5,J5502,664.84,2026-06-21,['future service_date'],future service_date
+133028,896043,24707,I33.6,,132.91,2021-02-09,['missing procedure_code'],missing procedure_code
+133035,542072,9491,,99201,-738.49,2023-08-28,['negative amount'],negative amount
+133036,52204,73832,Z84.4,,2014.4,2023-07-21,['missing procedure_code'],missing procedure_code
+133038,469748,42906,L68.9,J5502,1622.63,2027-08-20,['future service_date'],future service_date
+133048,301253,45721,,,623.16,2024-10-19,['missing procedure_code'],missing procedure_code
+133048,961171,38239,A71.6,,-647.9,2024-10-16,"['missing procedure_code', 'negative amount']",missing procedure_code; negative amount
+133051,358555,10954,G74.4,99202,-355.99,2025-12-30,['negative amount'],negative amount
+133054,686480,30411,J29.2,,2386.97,2021-12-01,['missing procedure_code'],missing procedure_code
+133056,344996,35218,P27.2,,2018.53,2021-01-06,['missing procedure_code'],missing procedure_code
+133060,296369,62645,T43.5,,678.99,2021-10-06,['missing procedure_code'],missing procedure_code
+133067,101493,44065,J24.7,J5502,-678.86,2025-04-08,['negative amount'],negative amount
+133068,308201,70049,I53.2,J5502,1612.84,,['missing/invalid service_date'],missing/invalid service_date
+133069,73956,12795,Z98.2,J5502,851.25,2026-05-21,['future service_date'],future service_date
+133077,827888,38973,Q25.6,,1478.72,2023-06-09,['missing procedure_code'],missing procedure_code
+133080,468517,50747,B37.9,99203,-616.19,2021-02-14,['negative amount'],negative amount
+133082,260360,8519,N31.7,,793.82,2025-03-26,['missing procedure_code'],missing procedure_code
+133087,448718,45807,T93.4,,799.67,,"['missing procedure_code', 'missing/invalid service_date']",missing procedure_code; missing/invalid service_date
+133095,297513,41596,G62.5,99202,118.29,,['missing/invalid service_date'],missing/invalid service_date
+133098,877720,77084,K55.2,99201,-49.33,2021-04-18,['negative amount'],negative amount
+127332,874012,38517,B78.3,99203,1595.61,2024-08-24,[],duplicate claim_id in source chunk
+127356,271497,31908,A46.6,99202,798.86,2022-07-26,[],duplicate claim_id in source chunk
+127590,264579,24379,S94.9,99203,383.16,2025-02-09,[],duplicate claim_id in source chunk
+127672,142599,10080,A57.6,99203,1578.81,2024-01-24,[],duplicate claim_id in source chunk
+127809,59960,55561,J16.5,99201,2310.11,2022-09-20,[],duplicate claim_id in source chunk
+127874,716040,31445,F80.9,J5502,1665.14,2023-06-02,[],duplicate claim_id in source chunk
+127920,465368,53839,,99201,2314.59,2025-09-20,[],duplicate claim_id in source chunk
+127934,918737,96347,L91.0,99203,1984.12,2025-08-30,[],duplicate claim_id in source chunk
+127987,662465,49384,D83.9,99202,933.28,2023-01-16,[],duplicate claim_id in source chunk
+128089,745001,69640,Q57.5,99202,223.41,2023-02-27,[],duplicate claim_id in source chunk
+128260,253314,67116,I66.1,99203,1782.81,2021-09-03,[],duplicate claim_id in source chunk
+128399,595243,36020,I37.9,99203,120.07,2025-03-19,[],duplicate claim_id in source chunk
+128467,54769,37086,D74.0,99203,2223.17,2021-09-13,[],duplicate claim_id in source chunk
+128482,17378,51205,,J5502,1301.5,2025-11-16,[],duplicate claim_id in source chunk
+128610,396760,92512,L11.2,J5502,326.85,2023-09-16,[],duplicate claim_id in source chunk
+128626,414286,39510,A89.4,99203,1963.9,2025-02-03,[],duplicate claim_id in source chunk
+128664,543929,97089,C39.4,99203,1374.88,2024-07-07,[],duplicate claim_id in source chunk
+128737,879830,89836,O30.9,99203,1114.63,2021-05-18,[],duplicate claim_id in source chunk
+128758,38981,43662,H76.4,99202,2490.22,2023-08-10,[],duplicate claim_id in source chunk
+128792,292226,75957,E36.9,J5502,1844.17,2021-02-12,[],duplicate claim_id in source chunk
+128794,236029,10371,D51.9,99203,1562.56,2025-01-15,[],duplicate claim_id in source chunk
+128830,395801,47508,T67.5,99202,2495.22,2023-12-27,[],duplicate claim_id in source chunk
+128832,648933,1847,M10.4,99202,131.26,2021-01-30,[],duplicate claim_id in source chunk
+128963,373295,6218,I58.8,99201,631.54,2024-07-28,[],duplicate claim_id in source chunk
+128994,697335,28646,L49.8,99201,2089.69,2022-08-24,[],duplicate claim_id in source chunk
+129001,540624,20481,R27.1,J5502,1245.73,2021-01-26,[],duplicate claim_id in source chunk
+129042,385280,1209,C73.4,00000,1307.87,2025-05-17,[],duplicate claim_id in source chunk
+129046,17569,5002,T45.3,99203,1821.71,2023-01-18,[],duplicate claim_id in source chunk
+129094,406650,11218,K91.7,99202,1143.48,2024-05-21,[],duplicate claim_id in source chunk
+129111,311480,16124,C61.1,J5502,447.98,2023-10-27,[],duplicate claim_id in source chunk
+129165,837685,25335,N84.8,99203,404.19,2022-03-18,[],duplicate claim_id in source chunk
+129189,144500,84142,I72.6,99201,434.51,2025-12-25,[],duplicate claim_id in source chunk
+129516,223771,6963,A95.5,99203,1917.09,2025-09-14,[],duplicate claim_id in source chunk
+129552,318393,54155,D63.4,99201,40.38,2024-12-07,[],duplicate claim_id in source chunk
+129585,318046,36990,R55.6,J55A2,1247.9,2022-01-05,[],duplicate claim_id in source chunk
+129603,703954,71281,B91.1,99201,1581.56,2022-10-26,[],duplicate claim_id in source chunk
+129666,765711,72801,R51.8,99203,923.84,2024-08-13,[],duplicate claim_id in source chunk
+129675,979561,99436,M95.2,99203,1733.17,2024-02-15,[],duplicate claim_id in source chunk
+129686,29298,41350,E74.3,J5502,1556.94,2024-07-02,[],duplicate claim_id in source chunk
+129796,992254,62693,,99201,2266.32,2024-03-08,[],duplicate claim_id in source chunk
+129847,274914,44471,E35.7,99202,1113.1,2022-05-18,[],duplicate claim_id in source chunk
+129889,1060,94136,K76.3,J5502,177.07,2021-11-22,[],duplicate claim_id in source chunk
+129905,139079,89281,J32.5,99201,110.95,2024-06-18,[],duplicate claim_id in source chunk
+129955,460314,89792,L62.1,99202,313.76,2024-11-26,[],duplicate claim_id in source chunk
+129981,518568,98279,B77.3,99203,273.85,2026-02-05,[],duplicate claim_id in source chunk
+130149,647720,56354,L54.0,99201,1500.42,2023-02-27,[],duplicate claim_id in source chunk
+130309,136393,93893,E69.2,99202,2436.33,2022-09-18,[],duplicate claim_id in source chunk
+130390,699184,32194,H91.5,99203,1449.21,2023-04-05,[],duplicate claim_id in source chunk
+130511,310886,68925,,00000,2371.98,2024-10-21,[],duplicate claim_id in source chunk
+130617,24495,90248,D80.7,99202,2196.42,2022-01-16,[],duplicate claim_id in source chunk
+130961,774385,27568,L34.0,99202,213.25,2021-08-16,[],duplicate claim_id in source chunk
+131036,828686,23863,Q24.3,99202,319.48,2025-06-11,[],duplicate claim_id in source chunk
+131307,842851,65524,L81.2,99201,1478.86,2023-06-20,[],duplicate claim_id in source chunk
+131328,501102,55045,R79.0,99201,910.06,2022-10-22,[],duplicate claim_id in source chunk
+131344,618556,97753,J78.4,99202,1576.97,2021-05-08,[],duplicate claim_id in source chunk
+131400,248431,11785,,99203,1830.38,2024-01-26,[],duplicate claim_id in source chunk
+131418,339995,39340,E14.7,99202,1011.67,2022-10-30,[],duplicate claim_id in source chunk
+131544,318776,17624,O19.1,99201,2266.61,2021-05-19,[],duplicate claim_id in source chunk
+131612,90389,45851,N59.0,99202,562.91,2022-05-29,[],duplicate claim_id in source chunk
+131622,231260,75677,K17.5,99201,454.25,2025-11-06,[],duplicate claim_id in source chunk
+131630,719309,96221,M13.4,99201,1827.62,2025-10-04,[],duplicate claim_id in source chunk
+131633,974471,19506,J00.7,J55A2,228.63,2024-04-03,[],duplicate claim_id in source chunk
+131733,859168,29167,S83.4,ABC12,1581.46,2021-10-13,[],duplicate claim_id in source chunk
+131806,669268,26868,G55.5,J5502,522.71,2021-03-02,[],duplicate claim_id in source chunk
+131809,81674,98972,T91.2,99201,446.3,2024-12-21,[],duplicate claim_id in source chunk
+131837,990458,17498,D91.8,99202,1080.83,2025-05-21,[],duplicate claim_id in source chunk
+131994,723472,7957,Q43.9,99203,678.59,2025-02-08,[],duplicate claim_id in source chunk
+132102,435476,65341,R73.0,99203,630.26,2021-04-29,[],duplicate claim_id in source chunk
+132136,99631,8295,Q48.2,PROCX,2348.36,2023-03-13,[],duplicate claim_id in source chunk
+132193,531438,9306,D04.3,J5502,1953.82,2021-01-19,[],duplicate claim_id in source chunk
+132243,374538,46485,N99.5,99202,497.58,2021-02-24,[],duplicate claim_id in source chunk
+132250,987616,82782,,99202,1064.43,2021-07-13,[],duplicate claim_id in source chunk
+132294,574575,51046,S27.0,J55A2,2315.0,2024-11-20,[],duplicate claim_id in source chunk
+132346,85358,95991,L77.2,99202,718.2,2025-02-13,[],duplicate claim_id in source chunk
+132458,161154,33910,O25.1,99201,2291.81,2025-04-28,[],duplicate claim_id in source chunk
+132575,181100,52878,G49.5,99201,1831.15,2025-06-08,[],duplicate claim_id in source chunk
+132747,768140,18744,D76.0,J5502,302.1,2023-02-04,[],duplicate claim_id in source chunk
+132783,671673,20322,T16.8,99201,1571.22,2023-07-17,[],duplicate claim_id in source chunk
+132841,483201,6112,C17.0,99201,2015.34,2021-06-02,[],duplicate claim_id in source chunk
+133090,315825,96961,L28.1,99203,1068.94,2023-04-13,[],duplicate claim_id in source chunk

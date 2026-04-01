@@ -5,7 +5,7 @@ import logging
 from datetime import datetime, timezone
 from io import StringIO
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional, Union
 
 import pandas as pd
 import mysql.connector
@@ -18,20 +18,19 @@ from psycopg2.extras import execute_values
 # =========================================================
 
 MYSQL_CONFIG = {
-    "host": os.getenv("MYSQL_HOST", "your-mysql-host"),
+    "host": os.getenv("MYSQL_HOST", "localhost"),
     "port": int(os.getenv("MYSQL_PORT", "3306")),
-    "user": os.getenv("MYSQL_USER", "your_mysql_user"),
-    "password": os.getenv("MYSQL_PASSWORD", "your_mysql_password"),
-    "database": os.getenv("MYSQL_DATABASE", "your_mysql_database"),
+    "user": os.getenv("MYSQL_USER", "root"),
+    "password": os.getenv("MYSQL_PASSWORD", "Oluwaboy@1"),
+    "database": os.getenv("MYSQL_DATABASE", "lucentis"),
 }
 
 PG_CONFIG = {
-    "host": os.getenv("PG_HOST", "your-aurora-postgres-host"),
+    "host": os.getenv("PG_HOST", "localhost"),
     "port": int(os.getenv("PG_PORT", "5432")),
-    "user": os.getenv("PG_USER", "your_pg_user"),
-    "password": os.getenv("PG_PASSWORD", "your_pg_password"),
-    "dbname": os.getenv("PG_DATABASE", "your_pg_database"),
-    "sslmode": os.getenv("PG_SSLMODE", "require"),
+    "user": os.getenv("PG_USER", "postgres"),
+    "password": os.getenv("PG_PASSWORD", "Oluwaboy@1"),
+    "dbname": os.getenv("PG_DATABASE", "lucentis_target"),
 }
 
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "5000"))
@@ -47,7 +46,7 @@ SELECT
     c.procedure_code,
     c.amount,
     c.service_date
-FROM claims c
+FROM lucentis.claims_backup c
 ORDER BY c.claim_id
 """
 
@@ -234,8 +233,8 @@ def copy_to_staging(pg_cur, staging_df: pd.DataFrame) -> int:
     return len(staging_df)
 
 
-def write_quarantine_file(load_id: str, chunk_number: int, invalid_df: pd.DataFrame) -> str | None:
-    if invalid_df.empty:
+def write_quarantine_file(load_id: str, chunk_number: int, invalid_df: pd.DataFrame) -> Optional[str]:
+    if invalid_df is None or invalid_df.empty:
         return None
 
     ensure_quarantine_dir()
@@ -371,7 +370,7 @@ def finalize_reconciliation(
     staged_rows_loaded: int,
     target_rows_rejected: int,
     target_rows_upserted: int,
-) -> Dict[str, int | str]:
+) -> Dict[str, Union[int , str]]:
     expected_staged = source_rows_read - source_rows_quarantined
     reconciliation_ok = (expected_staged == staged_rows_loaded)
 

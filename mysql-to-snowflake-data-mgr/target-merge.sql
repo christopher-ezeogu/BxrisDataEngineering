@@ -41,10 +41,11 @@ BEGIN
             WHEN s.patient_id IS NULL THEN 'missing patient_id'
             WHEN s.provider_id IS NULL THEN 'missing provider_id'
             WHEN s.procedure_code IS NULL THEN 'missing procedure_code'
+            WHEN s.procedure_code NOT IN ('J5502','99202','99203','99201') THEN 'invalid procedure_code'
             WHEN s.amount IS NULL THEN 'missing amount'
             WHEN s.amount < 0 THEN 'negative amount'
             WHEN s.service_date IS NULL THEN 'missing service_date'
-            WHEN s.service_date > CURRENT_DATE THEN 'future service_date'
+            WHEN s.service_date:DATE > CURRENT_DATE THEN 'future service_date'
             ELSE 'unknown validation failure'
         END AS rejection_reason
     FROM etl.stg_claims s
@@ -57,7 +58,7 @@ BEGIN
          OR s.amount IS NULL
          OR s.amount < 0
          OR s.service_date IS NULL
-         OR s.service_date > CURRENT_DATE
+         OR s.service_date::DATE > CURRENT_DATE
       );
 
     GET DIAGNOSTICS v_target_rows_rejected = ROW_COUNT;
