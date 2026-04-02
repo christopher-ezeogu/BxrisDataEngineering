@@ -13,6 +13,7 @@ DECLARE
 BEGIN
     -- 1. Reject invalid target-side rows
     INSERT INTO etl.claims_rejects (
+        stg_claim_row_id,
         load_id,
         claim_id,
         patient_id,
@@ -26,6 +27,7 @@ BEGIN
         rejection_reason
     )
     SELECT
+        s.stg_claim_row_id,
         s.load_id,
         s.claim_id,
         s.patient_id,
@@ -59,12 +61,14 @@ BEGIN
          OR s.amount < 0
          OR s.service_date IS NULL
          OR s.service_date::DATE > CURRENT_DATE
-      );
+      )
+      ON CONFLICT (stg_claim_row_id, rejection_reason) DO NOTHING;
 
     GET DIAGNOSTICS v_target_rows_rejected = ROW_COUNT;
 
     -- 2. Reject duplicate rows within the stage load, keeping only latest row
     INSERT INTO etl.claims_rejects (
+        stg_claim_row_id,
         load_id,
         claim_id,
         patient_id,
@@ -101,6 +105,7 @@ BEGIN
         FROM valid_rows v
     )
     SELECT
+        stg_claim_row_id,
         load_id,
         claim_id,
         patient_id,
@@ -113,7 +118,8 @@ BEGIN
         record_hash,
         'duplicate claim_id in stage load'
     FROM ranked_rows
-    WHERE row_num > 1;
+    WHERE row_num > 1
+    ON CONFLICT (stg_claim_row_id, rejection_reason) DO NOTHING;
 
     -- 3. Upsert only the winning valid rows
     WITH valid_rows AS (
@@ -192,7 +198,7 @@ BEGIN
     -- 4. Update audit
     UPDATE etl.load_audit
     SET
-        target_rows_rejected = COALESCE(target_rows_rejected, 0) + v_target_rows_rejected,
+        target_rows_rejected = (SELECT COUNT(*) FROM etl.claims_rejects r WHERE r.load_id = i_load_id),
         target_rows_upserted = v_target_rows_upserted,
         status = 'SUCCESS',
         completed_at = current_timestamp

@@ -38,6 +38,12 @@ CREATE INDEX IF NOT EXISTS idx_stg_claims_load_id
 CREATE INDEX IF NOT EXISTS idx_stg_claims_claim_id
     ON etl.stg_claims(claim_id);
 
+ALTER TABLE etl.stg_claims
+ADD COLUMN stg_claim_row_id bigserial;
+
+ALTER TABLE etl.stg_claims
+ADD CONSTRAINT stg_claims_pkey PRIMARY KEY (stg_claim_row_id);
+
 
 -- SELECT * FROM etl.load_audit;
 
@@ -97,6 +103,19 @@ CREATE TABLE IF NOT EXISTS etl.claims_rejects
     rejection_reason character varying(255) COLLATE pg_catalog."default" NOT NULL,
     rejected_at timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT claims_rejects_pkey PRIMARY KEY (reject_id)
-)
+);
 
-TABLESPACE pg_default;
+-- add column to ensure idempotency for rejected roles
+ALTER TABLE etl.claims_rejects
+ADD COLUMN stg_claim_row_id bigint;
+
+-- Add a foreign key back to staging
+ALTER TABLE etl.claims_rejects
+ADD CONSTRAINT fk_claims_rejects_stg_claim_row
+FOREIGN KEY (stg_claim_row_id)
+REFERENCES etl.stg_claims (stg_claim_row_id);
+
+-- Add unique constraint
+ALTER TABLE etl.claims_rejects
+ADD CONSTRAINT uq_claims_rejects_stage_reason
+UNIQUE (stg_claim_row_id, rejection_reason);
