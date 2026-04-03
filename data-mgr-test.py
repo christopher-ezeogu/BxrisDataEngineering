@@ -32,6 +32,19 @@ step 8. load records to database and archive bad records
  - save dataframe to temp location as .tmp to ensure that failures can be rollbacked without commiting
  - connect to database and load converted clean_df to csv
  -
+
+
+Production Grade:
+-------------------
+reads the file in chunks
+validates structural issues per chunk
+converts each chunk to a DataFrame
+applies business checks per chunk
+loads only the clean chunk to PostgreSQL immediately
+appends bad business rows and structural bad rows to archive files incrementally
+keeps the DB transaction open until the end, so a failure rolls back the whole load
+only promotes temp archive files to final files after everything succeeds
+
 """
 
 
@@ -48,202 +61,182 @@ from io import StringIO
 # CONFIG
 # =========================================================
 
-expected_fields = ["provider_id", "claim_amount", "claim_id", "service_date", "patient_id", "procedure_code", "diagnosis_code"]
-
-processedDt = dt.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
-
-load_id = dt.datetime.now().strftime("%Y%m%d%H%M%S") + "_" + uuid.uuid4().hex[:8]
+expected_fields = [
+    "provider_id",
+    "claim_amount",
+    "claim_id",
+    "service_date",
+    "patient_id",
+    "procedure_code",
+    "diagnosis_code"
+]
 
 valid_cpt_codes = [99213, 80050, 93000, 71020, 99214, 36415]
+CHUNK_SIZE = 10000
+
 
 # =========================================================
-# process claims
+# HELPERS
 # =========================================================
 
-def load_claims_v2(file_name):
-   try:
-        bad_rows = []
-        clean_rows = []
+def is_integer_string(series: pd.Series) -> pd.Series:
+    return series.astype("string").str.strip().str.fullmatch(r"\d+")
 
-        # ----------------------------
-        # 1. Read raw file safely
-        # ----------------------------
-        with open(file_name, "r", newline="", encoding="utf-8") as f:
-            lines = f.readlines()
 
-        if not lines:
-            raise ValueError("Input file is empty")
+def append_df_to_csv(df: pd.DataFrame, file_path: str) -> int:
+    if df.empty:
+        return 0
 
-        # Detect truncated final row
-        if not lines[-1].endswith("\n"):
-            bad_rows.append({
-                "line_number": len(lines),
-                "reason": "truncated final row",
-                "raw_row": lines[-1].rstrip("\n")
+    file_exists = os.path.exists(file_path)
+    write_header = (not file_exists) or os.path.getsize(file_path) == 0
+
+    df.to_csv(file_path, mode="a", header=write_header, index=False)
+    return len(df)
+
+
+def append_dict_rows_to_csv(rows: list, file_path: str, fieldnames: list) -> int:
+    if not rows:
+        return 0
+
+    file_exists = os.path.exists(file_path)
+    write_header = (not file_exists) or os.path.getsize(file_path) == 0
+
+    with open(file_path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        if write_header:
+            writer.writeheader()
+        writer.writerows(rows)
+
+    return len(rows)
+
+
+def process_structural_chunk(chunk_rows, header):
+    structural_bad_rows = []
+    structurally_clean_rows = []
+
+    for line_number, raw_line in chunk_rows:
+        raw_line_stripped = raw_line.rstrip("\n")
+
+        # Skip empty lines
+        if not raw_line_stripped.strip():
+            structural_bad_rows.append({
+                "line_number": line_number,
+                "reason": "empty row",
+                "raw_row": raw_line_stripped
             })
-            print("truncated final row (columms with double quotes "" )")
-            print("------------------------------------------------------")
-            print(bad_rows)
-   
-        # ----------------------------
-        # 2. Parse header
-        # ----------------------------
+            continue
+
+        # Detect broken quoted rows
+        if raw_line.count('"') % 2 != 0:
+            structural_bad_rows.append({
+                "line_number": line_number,
+                "reason": "broken quoted row",
+                "raw_row": raw_line_stripped
+            })
+            continue
+
+        # Parse row safely
         try:
-            header = next(csv.reader([lines[0]]))
-        except Exception as e:
-            raise ValueError(f"Failed to parse header: {e}")
+            parsed = next(csv.reader([raw_line]))
+        except Exception:
+            structural_bad_rows.append({
+                "line_number": line_number,
+                "reason": "unparseable row",
+                "raw_row": raw_line_stripped
+            })
+            continue
 
-        header = [col.strip().lower() for col in header]
+        # Detect too few / extra columns
+        if len(parsed) < len(header):
+            structural_bad_rows.append({
+                "line_number": line_number,
+                "reason": "row has too few columns",
+                "raw_row": raw_line_stripped
+            })
+            continue
 
-        print("Detected columns:", header)
+        if len(parsed) > len(header):
+            structural_bad_rows.append({
+                "line_number": line_number,
+                "reason": "row has extra columns",
+                "raw_row": raw_line_stripped
+            })
+            continue
 
-        # Detect extra / missing columns in header
-        missing_header_cols = [c for c in expected_fields if c not in header]
-        extra_header_cols = [c for c in header if c not in expected_fields]
+        structurally_clean_rows.append(parsed)
 
-        if missing_header_cols:
-            raise ValueError(f"Missing expected columns in header: {missing_header_cols}")
+    return structurally_clean_rows, structural_bad_rows
 
-        if extra_header_cols:
-            raise ValueError(f"Unexpected extra columns in header: {extra_header_cols}")
-        
 
-        # ----------------------------
-        # 3. Validate each raw row
-        # ----------------------------
-        for line_number, raw_line in enumerate(lines[1:], start=2):  # allow all rows from file skip the header, track the line number
-            raw_line_stripped = raw_line.rstrip("\n") # removes the trailing new line and keeps everything intact
+def apply_business_checks(df: pd.DataFrame, load_id: str):
+    if df.empty:
+        empty_df = pd.DataFrame(columns=df.columns.tolist() + ["load_id"])
+        return empty_df.copy(), empty_df.copy()
 
-            # Skip empty lines
-            if not raw_line_stripped.strip():
-                bad_rows.append({
-                    "line_number": line_number,
-                    "reason": "empty row",
-                    "raw_row": raw_line_stripped
-                })
-                continue
+    # Reorder columns to expected order
+    df = df[expected_fields].copy()
 
-            # Detect broken quoted rows
-            if raw_line.count('"') % 2 != 0:
-                bad_rows.append({
-                    "line_number": line_number,
-                    "reason": "broken quoted row",
-                    "raw_row": raw_line_stripped
-                })
-                continue
-            
-            # Parse row safely
-            try:
-                parsed = next(csv.reader([raw_line])) # treats one line as a mini CSV file, (next..) extracts the parsed rows as a list
-            except Exception:
-                bad_rows.append({
-                    "line_number": line_number,
-                    "reason": "unparseable row",
-                    "raw_row": raw_line_stripped
-                })
-                continue
+    # Standardize string columns first
+    for col in ["claim_id", "patient_id", "provider_id", "procedure_code", "diagnosis_code"]:
+        df[col] = df[col].astype("string").str.strip()
 
-            # Detect too few / extra columns
-            if len(parsed) < len(header):
-                bad_rows.append({
-                    "line_number": line_number,
-                    "reason": "row has too few columns",
-                    "raw_row": raw_line_stripped
-                })
-                continue
+    # Convert only fields that should truly be numeric/date at this stage
+    df["claim_amount"] = pd.to_numeric(df["claim_amount"], errors="coerce")
+    df["service_date"] = pd.to_datetime(df["service_date"], errors="coerce")
+    df["diagnosis_code"] = df["diagnosis_code"].astype("string")
 
-            if len(parsed) > len(header):
-                bad_rows.append({
-                    "line_number": line_number,
-                    "reason": "row has extra columns",
-                    "raw_row": raw_line_stripped
-                })
-                continue
+    bad_index = set()
 
-            clean_rows.append(parsed)
+    # Integer-only validation first
+    valid_claim_id_mask = is_integer_string(df["claim_id"])
+    valid_patient_id_mask = is_integer_string(df["patient_id"])
+    valid_provider_id_mask = is_integer_string(df["provider_id"])
+    valid_procedure_code_mask = is_integer_string(df["procedure_code"])
 
-        # ----------------------------
-        # 4. Load clean raw rows into DataFrame
-        # ----------------------------
-        df = pd.DataFrame(clean_rows, columns=header)
+    bad_index.update(df[~valid_claim_id_mask].index)
+    bad_index.update(df[~valid_patient_id_mask].index)
+    bad_index.update(df[~valid_provider_id_mask].index)
+    bad_index.update(df[~valid_procedure_code_mask].index)
 
-        # Reorder columns to expected order
-        df = df[expected_fields]
+    # Convert validated integer fields
+    if valid_claim_id_mask.any():
+        df["claim_id"] = df["claim_id"].where(valid_claim_id_mask).astype("Int64")
+        df["patient_id"] = df["patient_id"].where(valid_patient_id_mask).astype("Int64")
+        df["provider_id"] = df["provider_id"].where(valid_provider_id_mask).astype("Int64")
+        df["procedure_code"] = df["procedure_code"].where(valid_procedure_code_mask).astype("Int64")
 
-        print(f"{len(df)} structurally valid rows loaded")
-        print(f"{len(bad_rows)} structurally bad rows quarantined")
+    # Missing required fields
+    missing_required = df[df[expected_fields].isnull().any(axis=1)]
+    bad_index.update(missing_required.index)
 
-        # ----------------------------
-        # 5. Standardize types
-        # ----------------------------
-        df["claim_id"] = pd.to_numeric(df["claim_id"], errors="coerce")
-        df["patient_id"] = pd.to_numeric(df["patient_id"], errors="coerce")
-        df["provider_id"] = pd.to_numeric(df["provider_id"], errors="coerce")
-        df["procedure_code"] = pd.to_numeric(df["procedure_code"], errors="coerce")
-        df["claim_amount"] = pd.to_numeric(df["claim_amount"], errors="coerce")
-        df["service_date"] = pd.to_datetime(df["service_date"], errors="coerce")
-        df["diagnosis_code"] = df["diagnosis_code"].astype("string")
+    # Duplicate claim_id inside chunk
+    duplicate_claims = df[df.duplicated("claim_id", keep=False)]
+    bad_index.update(duplicate_claims.index)
 
-        # ----------------------------
-        # 6. Apply business/data quality checks
-        # ----------------------------
-        bad_index = set()
+    # Negative claim_amount
+    negative_claim_amount = df[df["claim_amount"] < 0]
+    bad_index.update(negative_claim_amount.index)
 
-        # missing required fields
-        missing_required = df[df[expected_fields].isnull().any(axis=1)]
-        print(f"{len(missing_required)} records with missing required fields")
-        bad_index.update(missing_required.index)
+    # Invalid procedure_code against allowed CPT list
+    invalid_procedure_code = df[~df["procedure_code"].isin(valid_cpt_codes)]
+    bad_index.update(invalid_procedure_code.index)
 
-        # duplicate claim_id
-        duplicate_claims = df[df.duplicated("claim_id", keep=False)]
-        print(f"{len(duplicate_claims)} records with duplicate claim_id")
-        bad_index.update(duplicate_claims.index)
+    # Malformed service_date
+    malformed_service_date = df[df["service_date"].isna()]
+    bad_index.update(malformed_service_date.index)
 
-        # negative claim_amount
-        negative_claim_amount = df[df["claim_amount"] < 0]
-        print(f"{len(negative_claim_amount)} records with negative claim_amount")
-        bad_index.update(negative_claim_amount.index)
+    # Future service_date
+    today = pd.Timestamp.today().normalize()
+    future_service_date = df[df["service_date"] > today]
+    bad_index.update(future_service_date.index)
 
-        # invalid procedure_code
-        invalid_procedure_code = df[~df["procedure_code"].isin(valid_cpt_codes)]
-        print(f"{len(invalid_procedure_code)} records with invalid procedure_code")
-        bad_index.update(invalid_procedure_code.index)
+    business_bad_df = df.loc[sorted(bad_index)].copy()
+    clean_df = df.drop(index=bad_index).copy()
 
-        # ensure patient_id is integer only & mixed / invalid patient_id like UNK
-        invalid_patient_id = df[df["patient_id"].isna() | (df["patient_id"] % 1 != 0)]
-        print(f"{len(invalid_patient_id)} records with invalid patient_id")
-        bad_index.update(invalid_patient_id.index)
+    business_bad_df["load_id"] = load_id
+    clean_df["load_id"] = load_id
 
-        # ensure provider is integer only 
-        invalid_provider_id = df[df["provider_id"].isna() | (df["provider_id"] % 1 !=0)]
-        print(f"{len(invalid_provider_id)} records with invalid provider_id")
-        bad_index.update(invalid_provider_id.index)
-
-        # malformed service_date
-        malformed_service_date = df[df["service_date"].isna()]
-        print(f"{len(malformed_service_date)} records with malformed service_date")
-        bad_index.update(malformed_service_date.index)
-
-        # future service_date
-        today = pd.Timestamp.today().normalize()
-        future_service_date = df[df["service_date"] > today]
-        print(f"{len(future_service_date)} records with future service_date")
-        bad_index.update(future_service_date.index)
-
-        # ----------------------------
-        # 7. Split clean vs bad business rows
-        # ----------------------------
-        business_bad_df = df.loc[sorted(bad_index)].copy()
-        clean_df = df.drop(index=bad_index).copy()
-
-        # add load_id field to the batch before loading
-        business_bad_df["load_id"] = load_id
-        clean_df["load_id"] = load_id
-
-        print(f"{len(clean_df)} fully clean claim records ready for load")
-        print(f"{len(business_bad_df)} business-invalid claim records quarantined")
-
-        #convert final dtypes for clean output
+    if not clean_df.empty:
         clean_df = clean_df.astype({
             "claim_id": "Int64",
             "patient_id": "Int64",
@@ -252,69 +245,180 @@ def load_claims_v2(file_name):
             "diagnosis_code": "string"
         })
 
-        #-----------------------------------------------------
-        # 8. load records to database and archive bad records
-        #-----------------------------------------------------
+    return clean_df, business_bad_df
 
-        # define storage file path for invalid records
-        file_name = '/invalid_records_'+processedDt+'.csv'
-        temp_file_name = '/invalid_records_'+processedDt+'.tmp'
 
-        structural_bad_records_file_name = '/structural_bad_records_'+processedDt+'.csv'
-        temp_structural_bad_records_file_name = '/structural_bad_records_'+processedDt+'.tmp'
+def load_clean_chunk_to_db(cur, clean_df: pd.DataFrame):
+    if clean_df.empty:
+        return 0
 
-        final_file_path = os.getcwd() + file_name
-        temp_file_path = os.getcwd() + temp_file_name
+    output = StringIO()
+    output.write(clean_df.to_csv(index=False))
+    output.seek(0)
 
-        final_structural_bad_record_file_path = os.getcwd() + structural_bad_records_file_name
-        temp_structural_bad_record_file_path = os.getcwd() + temp_structural_bad_records_file_name
+    cur.copy_expert(
+        """
+        COPY etl.stg_claims
+        (provider_id, amount, claim_id, service_date, patient_id, procedure_code, diagnosis_code, load_id)
+        FROM STDIN WITH CSV HEADER
+        """,
+        output
+    )
 
-        # save dataframe to temp file location.
-        business_bad_df.to_csv(temp_file_path, index=False)
-        pd.DataFrame(bad_rows).to_csv(temp_structural_bad_record_file_path, index=False)
+    return len(clean_df)
 
-        # validate temp archive
-        temp_invalid_count = len(pd.read_csv(temp_file_path))
-        if temp_invalid_count != len(business_bad_df):
-            raise Exception(
-                f"Archive validation failed. Expected {len(business_bad_df)} invalid rows, "
-                f"but temp archive contains {temp_invalid_count}"
+
+# =========================================================
+# MAIN FUNCTION
+# =========================================================
+
+def load_claims_v3(file_name, chunk_size=CHUNK_SIZE):
+    conn = None
+    cur = None
+    temp_invalid_file_path = None
+    final_invalid_file_path = None
+    temp_structural_file_path = None
+    final_structural_file_path = None
+
+    processed_dt = dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    load_id = dt.datetime.now().strftime("%Y%m%d%H%M%S") + "_" + uuid.uuid4().hex[:8]
+
+    total_structural_bad = 0
+    total_structural_clean = 0
+    total_business_bad = 0
+    total_loaded = 0
+    total_rows_read = 0
+
+    structural_fieldnames = ["line_number", "reason", "raw_row"]
+
+    try:
+        invalid_file_name = f"invalid_records_{processed_dt}.tmp"
+        structural_file_name = f"structural_bad_records_{processed_dt}.tmp"
+
+        final_invalid_name = f"invalid_records_{processed_dt}.csv"
+        final_structural_name = f"structural_bad_records_{processed_dt}.csv"
+
+        temp_invalid_file_path = os.path.join(os.getcwd(), invalid_file_name)
+        temp_structural_file_path = os.path.join(os.getcwd(), structural_file_name)
+
+        final_invalid_file_path = os.path.join(os.getcwd(), final_invalid_name)
+        final_structural_file_path = os.path.join(os.getcwd(), final_structural_name)
+
+        with open(file_name, "r", newline="", encoding="utf-8") as f:
+            try:
+                header_line = next(f)
+            except StopIteration:
+                raise ValueError("Input file is empty")
+
+            # Parse header
+            try:
+                header = next(csv.reader([header_line]))
+            except Exception as e:
+                raise ValueError(f"Failed to parse header: {e}")
+
+            header = [col.strip().lower() for col in header]
+            print("Detected columns:", header)
+
+            missing_header_cols = [c for c in expected_fields if c not in header]
+            extra_header_cols = [c for c in header if c not in expected_fields]
+
+            if missing_header_cols:
+                raise ValueError(f"Missing expected columns in header: {missing_header_cols}")
+
+            if extra_header_cols:
+                raise ValueError(f"Unexpected extra columns in header: {extra_header_cols}")
+
+            conn = psycopg2.connect(
+                host="localhost",
+                port=5432,
+                database="lucentis",
+                user="appuser",
+                password="testPwd@1"
             )
+            cur = conn.cursor()
 
-        # connect to target database 
-        conn = psycopg2.connect(host='localhost', port=5432, database='lucentis', user='appuser', password='testPwd@1')
-        cur = conn.cursor()
+            chunk_rows = []
+            last_line_number = 1
+            last_line_text = header_line
 
-        # load valid records
-        output = StringIO()
-        output.write(clean_df.to_csv(index=False))
-        output.seek(0)
+            for line_number, raw_line in enumerate(f, start=2):
+                total_rows_read += 1
+                chunk_rows.append((line_number, raw_line))
+                last_line_number = line_number
+                last_line_text = raw_line
 
-        # copy, insert and validate valid records inserted
-        cur.copy_expert(f"COPY etl.stg_claims (provider_id, amount, claim_id, service_date, patient_id, procedure_code, diagnosis_code, load_id) FROM STDIN WITH CSV HEADER", output)
-        copied_count = cur.rowcount
+                if len(chunk_rows) >= chunk_size:
+                    structurally_clean_rows, structural_bad_rows = process_structural_chunk(chunk_rows, header)
 
-        # promote temp archive to final archive only after DB load succeeds
-        os.replace(temp_file_path, final_file_path)
-        os.replace(temp_structural_bad_record_file_path, final_structural_bad_record_file_path)
+                    structural_bad_written = append_dict_rows_to_csv(
+                        structural_bad_rows,
+                        temp_structural_file_path,
+                        structural_fieldnames
+                    )
+                    total_structural_bad += structural_bad_written
+                    total_structural_clean += len(structurally_clean_rows)
 
-        archived_invalid_count = len(pd.read_csv(final_file_path))
-        if archived_invalid_count != len(business_bad_df):
-            raise Exception(
-                f"Final archive validation failed. Expected {len(business_bad_df)} invalid rows, "
-                f"but archive contains {archived_invalid_count}"
-            )
+                    if structurally_clean_rows:
+                        df_chunk = pd.DataFrame(structurally_clean_rows, columns=header)
+                        clean_df, business_bad_df = apply_business_checks(df_chunk, load_id)
+
+                        total_business_bad += append_df_to_csv(business_bad_df, temp_invalid_file_path)
+                        total_loaded += load_clean_chunk_to_db(cur, clean_df)
+
+                    chunk_rows = []
+
+            # Process final chunk
+            if chunk_rows:
+                structurally_clean_rows, structural_bad_rows = process_structural_chunk(chunk_rows, header)
+
+                structural_bad_written = append_dict_rows_to_csv(
+                    structural_bad_rows,
+                    temp_structural_file_path,
+                    structural_fieldnames
+                )
+                total_structural_bad += structural_bad_written
+                total_structural_clean += len(structurally_clean_rows)
+
+                if structurally_clean_rows:
+                    df_chunk = pd.DataFrame(structurally_clean_rows, columns=header)
+                    clean_df, business_bad_df = apply_business_checks(df_chunk, load_id)
+
+                    total_business_bad += append_df_to_csv(business_bad_df, temp_invalid_file_path)
+                    total_loaded += load_clean_chunk_to_db(cur, clean_df)
+
+            # Detect truncated final row
+            if last_line_number > 1 and not last_line_text.endswith("\n"):
+                truncated_row = [{
+                    "line_number": last_line_number,
+                    "reason": "truncated final row",
+                    "raw_row": last_line_text.rstrip("\n")
+                }]
+                total_structural_bad += append_dict_rows_to_csv(
+                    truncated_row,
+                    temp_structural_file_path,
+                    structural_fieldnames
+                )
+
+        # Promote temp archive files only after DB work succeeds
+        if os.path.exists(temp_invalid_file_path):
+            os.replace(temp_invalid_file_path, final_invalid_file_path)
+
+        if os.path.exists(temp_structural_file_path):
+            os.replace(temp_structural_file_path, final_structural_file_path)
 
         conn.commit()
 
-        print(f"{copied_count} valid records loaded successfully")
-        print(f"{archived_invalid_count} invalid records archived successfully")
+        print(f"load_id: {load_id}")
+        print(f"source rows read: {total_rows_read}")
+        print(f"structurally clean rows: {total_structural_clean}")
+        print(f"structurally bad rows: {total_structural_bad}")
+        print(f"business-invalid rows archived: {total_business_bad}")
+        print(f"valid rows loaded: {total_loaded}")
         print("DB load and archive completed together")
 
-   except (Exception, psycopg2.DatabaseError) as error:
+    except (Exception, psycopg2.DatabaseError) as error:
         print(f"Error: {error}")
 
-        # rollback DB transaction
         if conn is not None:
             try:
                 conn.rollback()
@@ -322,15 +426,20 @@ def load_claims_v2(file_name):
             except Exception as rollback_error:
                 print(f"Rollback failed: {rollback_error}")
 
-        # cleanup archive files best-effort
-        for path in [temp_file_path, final_file_path, temp_structural_bad_record_file_path, final_structural_bad_record_file_path]:
+        for path in [
+            temp_invalid_file_path,
+            final_invalid_file_path,
+            temp_structural_file_path,
+            final_structural_file_path
+        ]:
             if path and os.path.exists(path):
                 try:
                     os.remove(path)
                     print(f"Removed archive file during rollback: {path}")
                 except Exception as cleanup_error:
                     print(f"Archive cleanup failed for {path}: {cleanup_error}")
-   finally:
+
+    finally:
         if cur is not None:
             try:
                 cur.close()
@@ -345,4 +454,4 @@ def load_claims_v2(file_name):
 
 
 # test
-load_claims_v2("claims_harder_dataset_corrupted.csv")   
+load_claims_v3("claims_harder_dataset_corrupted.csv")
