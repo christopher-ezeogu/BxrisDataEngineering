@@ -21,7 +21,7 @@ MYSQL_CONFIG = {
     "host": os.getenv("MYSQL_HOST", "localhost"),
     "port": int(os.getenv("MYSQL_PORT", "3306")),
     "user": os.getenv("MYSQL_USER", "root"),
-    "password": os.getenv("MYSQL_PASSWORD", "Oluwaboy@1"),
+    "password": os.getenv("MYSQL_PASSWORD", "O*****1"),
     "database": os.getenv("MYSQL_DATABASE", "lucentis"),
 }
 
@@ -29,7 +29,7 @@ PG_CONFIG = {
     "host": os.getenv("PG_HOST", "localhost"),
     "port": int(os.getenv("PG_PORT", "5432")),
     "user": os.getenv("PG_USER", "postgres"),
-    "password": os.getenv("PG_PASSWORD", "Oluwaboy@1"),
+    "password": os.getenv("PG_PASSWORD", "O*****1"),
     "dbname": os.getenv("PG_DATABASE", "lucentis_target"),
 }
 
