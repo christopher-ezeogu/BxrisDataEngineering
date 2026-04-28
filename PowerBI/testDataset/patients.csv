@@ -1,0 +1,7 @@
+patient_id,patient_name,gender,dob,state
+P001,John Doe,M,1985-06-12,NY
+P002,Jane Smith,F,1990-03-22,NJ
+P003,Michael Lee,M,1978-11-02,NY
+P004,Sarah Kim,F,1988-07-19,CT
+P005,David Brown,M,1995-01-30,NJ
+P006,Emily Davis,F,1982-09-14,NY

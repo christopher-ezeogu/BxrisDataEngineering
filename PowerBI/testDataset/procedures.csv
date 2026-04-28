@@ -1,0 +1,4 @@
+procedure_code,procedure_name,category
+PROC_A,Consultation,Outpatient
+PROC_B,Surgery,Inpatient
+PROC_C,Follow-up,Outpatient
