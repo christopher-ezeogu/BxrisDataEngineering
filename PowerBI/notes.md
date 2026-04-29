@@ -77,7 +77,8 @@ on the "Format" tab above -- edit interactions -
 
 # CLAIMS DATA PROCESSING
 - load -+- transform data --->  build schema relationship --->  add dax measures ---> build schema ---> visualize data --> visualize interactions
--- "Get data - to retrieve file -->>>
+
+-- "Get data" - to retrieve file -->>>
 -- claims.csv - transform data -- fields formated and duplicates reomved before loading
 -- providers.csv - transform data -- used first row as column headers
 -- procedures.csv - transform data -- used first row as column headers
@@ -97,23 +98,22 @@ YearMonth = Date.ToText([service_date], "yyyy-MM") -- do this when you have alre
 -- add column -- list.NonNullcount(Records.ToList(_)) -- this will give you count of records with nulls (0 ) - removes rows where all values are nulls 
 
 # Step 3: Build star schema
-Relationships:
-    - claims.patient_id → patients.patient_id
-    - claims.provider_id → providers.provider_id
-    - claims.procedure_code → procedures.procedure_code
+- Relationships:
+  - claims.patient_id → patients.patient_id
+  - claims.provider_id → providers.provider_id
+  - claims.procedure_code → procedures.procedure_code
 Important:
 Single direction filtering
 Claims = fact table (center)
 
 # Step 4: Create DAX measures
-Total Cost
+- Total Cost: 
     Total Cost = SUM(claims[claim_amount])
-Cost per Patient
+- Cost per Patient: 
     Cost per Patient = DIVIDE([Total Cost], DISTINCTCOUNT(claims[patient_id]))
-Total Claims
+- Total Claims: 
     Total Claims = COUNT(claims[claim_id])
-
-Top Providers (just use Total Cost measure in visual)
+- Top Providers (just use Total Cost measure in visual)
 
 
 # Visualize Data
@@ -137,7 +137,7 @@ Top Providers (just use Total Cost measure in visual)
     Specialty
     Procedure Category
 
-# refresh data from SQL Server
+# To refresh data from SQL Server
 - records when connected to has to be done using the "Direct Query" option instead of "Import"
 
 
