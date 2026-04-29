@@ -68,3 +68,76 @@ Tooltip - to add the hover feature on a line chart
 # Visual Interactions -  Allows for cross filtering between visuals
 
 on the "Format" tab above -- edit interactions - 
+
+
+
+# ########################################################################################################## #
+
+
+
+# CLAIMS DATA PROCESSING
+- load -+- transform data --->  build schema relationship --->  add dax measures ---> build schema ---> visualize data --> visualize interactions
+-- "Get data - to retrieve file -->>>
+-- claims.csv - transform data -- fields formated and duplicates reomved before loading
+-- providers.csv - transform data -- used first row as column headers
+-- procedures.csv - transform data -- used first row as column headers
+-- patients.csv - transform data -- column header looks goood -- "Close & Apply" to save.
+
+# Power Query
+    -   Convert service_date → Date
+    -   Ensure claim_amount → Decimal
+    -   Remove duplicates
+    Filter out:
+        -  Null claim_amount - to do (on the column - filter tab -  remove empty to remove nulls & blanks)
+        -  Negative claim_amount - Table.SelectRows(#"Filtered Rows", each[claim_amount] >= 0)
+
+Add column:
+YearMonth = Date.ToText([service_date], "yyyy-MM") -- do this when you have already converted the text to Date else - YearMonth = FORMAT([service_date], "YYYY-MM")
+
+-- add column -- list.NonNullcount(Records.ToList(_)) -- this will give you count of records with nulls (0 ) - removes rows where all values are nulls 
+
+# Step 3: Build star schema
+Relationships:
+    - claims.patient_id → patients.patient_id
+    - claims.provider_id → providers.provider_id
+    - claims.procedure_code → procedures.procedure_code
+Important:
+Single direction filtering
+Claims = fact table (center)
+
+# Step 4: Create DAX measures
+Total Cost
+    Total Cost = SUM(claims[claim_amount])
+Cost per Patient
+    Cost per Patient = DIVIDE([Total Cost], DISTINCTCOUNT(claims[patient_id]))
+Total Claims
+    Total Claims = COUNT(claims[claim_id])
+
+Top Providers (just use Total Cost measure in visual)
+
+
+# Visualize Data
+- Build the dashboard
+- KPI Cards
+    Total Cost
+    Total Claims
+    Cost per Patient
+
+- Trend Chart
+    X-axis: service_date (Month)
+    Y-axis: Total Cost
+
+- Breakdown Chart
+    Bar chart:
+        Axis: provider_name
+        Value: Total Cost
+
+- Optional slicers (adds points)
+    State
+    Specialty
+    Procedure Category
+
+# refresh data from SQL Server
+- records when connected to has to be done using the "Direct Query" option instead of "Import"
+
+
